@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+.example {
+  width: 100%;
+  margin-top: 40px;
+}
+.button {
+  margin: 10px;
+  padding: 7px;
+  background-color: rgb(114, 21, 21);
+  color: wheat;
+}
+.color-input {
+  margin: 10px;
+}
+.color-black {
+  width: 700px;
+  height: 700px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+
+
+
