@@ -64,9 +64,38 @@
     };
 
   }
+  function createToDoItemSucces (name) {
+    let itemNew = document.createElement('li');
+    itemNew.classList.add('list-group-item-success');
 
+    // кнопки помещаем в элемент, который покажет их в одной группе
+    let newButtonGroup = document.createElement('div');
+    let newDoneButton = document.createElement('button');
+    let newDeleteButton = document.createElement('button');
+    // устанавление стилей для элемента списка, а также для размещения кнопок в правой части с помощ flex
+    itemNew.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+    itemNew.textContent = name;
 
-  function createTodoApp(container, title = 'Список дел'){
+    newButtonGroup.classList.add('btn-group', 'btn-group-sm');
+    newDoneButton.classList.add('btn', 'btn-success');
+    newDoneButton.textContent = 'Готово';
+    newDeleteButton.classList.add('btn', 'btn-danger');
+    newDeleteButton.textContent = 'Удалить';
+
+    //вклдаываем кнопки в один элемент, чтобы они объединилсь в один блок
+    newButtonGroup.append(newDoneButton);
+    newButtonGroup.append(newDeleteButton);
+    itemNew.append(newButtonGroup);
+
+    //приложению нужен доступ к самому элементу и кнопкам, чтобы обрабатывать события нажатия
+    return {
+      itemNew,
+      newDoneButton,
+      newDeleteButton,
+    };
+  }
+
+  function createTodoApp(container, title = 'Список дел',  objOfAffairs){
 
     let todoAppTitle = createAppTitle(title);
     let todoItemForm = createTodoItemForm();
@@ -75,6 +104,24 @@
     container.append(todoAppTitle);
     container.append(todoItemForm.form);
     container.append(todoList);
+
+    let todoItemObjAff = createToDoItemSucces(objOfAffairs[0]);
+    todoList.append(todoItemObjAff.itemNew);
+    let newTodoItemObjAff = createToDoItemSucces(objOfAffairs[1]);
+    todoList.append(newTodoItemObjAff.itemNew);
+
+
+  // //добавляем обработчики событий на новую функцию с кнопкой
+  //   let todoItemNew = createToDoItemSucces(todoItemForm.input.value);
+  //   todoItemNew.newDoneButton.addEventListener('click', function() {
+  //     todoItemNew.itemNew.classList.remove('list-group-item-success');
+  //     console.log('click');
+  //   });
+  //   todoItemNew.newDeleteButton.addEventListener('click', function(){
+  //     if(confirm('Вы уверены?')){
+  //       todoItemNew.itemNew.remove();
+  //     }
+  //   });
 
     todoItemForm.input.addEventListener('input', function () {
       if (!todoItemForm.input.value) {
@@ -93,6 +140,7 @@
       if(!todoItemForm.input.value) {
         return;
       }
+
       let todoItem = createToDoItem(todoItemForm.input.value);
 
       //добавляем обравботчики событий
@@ -108,14 +156,18 @@
       //создаем и добавляем в список новое дело с названием из поля ввода
       todoList.append(todoItem.item);
 
-
       //обнуляем значение в поле, чтобы не пришлось стирать вручную
       todoItemForm.input.value = '';
       todoItemForm.button.setAttribute('disabled', true);
     });
   }
+  let todoItemForm = createTodoItemForm();
+  let todoItem = createToDoItem(todoItemForm.input.value);
+  let local = localStorage.setItem('items', todoItem);
 
+  console.log(local);
  window.createTodoApp = createTodoApp;
+
 
 
 
