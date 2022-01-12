@@ -202,11 +202,12 @@ input::-webkit-search-results-decoration {
 }
 /*article-banner end */
 /* section-privileges start */
+.section-privileges__container{
+    margin-top: 100px;
+}
 .section-privileges__wrapper{
     display: flex;
-}
-.section-privileges__left{
-    width: 50%;
+    justify-content: space-between;
 }
 .section_heading{
     width: 15%;
@@ -296,11 +297,113 @@ input::-webkit-search-results-decoration {
     background-image: url(../img/svg/03.svg);
     background-repeat: no-repeat;
 }
-
 /* section-privileges end */
+/* section-ecosystem start */
+.section-ecosystem__container{
+    margin-top: 90px;
+}
+.section-ecosystem__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.section-ecosystem__card{
+    margin-bottom: 30px;
+    width: 269px;
+    height: 233px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.section-ecosystem__card:not(:nth-child(4n)){
+    margin-right: 48px;
+}
+.section-ecosystem__text{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+}
+.text-card_1{
+    margin: 79px 11px 78px 10px;
+}
+.text-card_2{
+    margin: 88px 11px;
+}
+.text-card_3{
+    margin: 88px 6px 88px 16px;
+}
+.text-card_4{
+    margin: 79px 10px 78px 12px;
+}
+.text-card_5{
+    margin: 95px 4px 105px 3px;
+}
+.text-card_6{
+    margin: 88px 4px;
+}
+.text-card_7{
+    margin: 69px 3px;
+}
+/* section-ecosystem end */
+/* section-location start */
+#map{
+    width: 100%;
+    height: 470px;
+}
+.yandex-map{
+    position: relative;
+}
+[class*="ground-pane"]{
+    filter: grayscale(1);
+  }
+#map > ymaps {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.section-location__yandex-menu{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 360px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+.section-location__yandex-menu-heading{
+    margin: 28px 0 30px 0;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #010101;
+    text-align: center;
+}
+.section-location__yandex-menu-text{
+    margin-bottom: 10px;
+    width: 372px;
+    padding: 10px 0;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}   
 
-
-
-
+/* section-location end */
 
 
