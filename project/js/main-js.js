@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 //Map
   // Функция ymaps.ready() будет вызвана, когда
   // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
@@ -8,25 +9,122 @@
         // Порядок по умолчанию: «широта, долгота».
         // Чтобы не определять координаты центра карты вручную,
         // воспользуйтесь инструментом Определение координат.
-        center: [55.692089, 37.513798],
+        center: [55.699844, 37.520939],
         // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
-        zoom: 18,
+        zoom: 14,
         controls: []
 });
-//     MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-//         '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-// ),
-    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+    myPlacemark = new ymaps.Placemark([55.693213, 37.512503], {
     hintContent: 'Территория ИНТЦ МГУ'
 }, {
     // Опции.
     // Необходимо указать данный тип макета.
     iconLayout: 'default#image',
     // Своё изображение иконки метки.
-    iconImageHref: 'img/svg/Polygon_1.svg',
+    iconImageHref: 'img/svg/Group_402.svg',
     // Размеры метки.
-    iconImageSize: [20, 20],
+    iconImageSize: [58, 49],
 });
-myMap.geoObjects.add(myPlacemark);
+  
+    myMap.geoObjects.add(myPlacemark);
+    });
+
+    //section-cluster__slider start (slider start)
+    const clusterSliders = document.querySelectorAll('.section-cluster__slide');
+    const prevSlide = document.querySelector('.section-cluster__arrow-left');
+    const nextSlide = document.querySelector('.section-cluster__arrow-right');
+    const clustersSlidesWrapper = document.querySelector('.section-cluster__slider-block');
+    const slidesField = document.querySelector('.section-cluster__slider-inner');
+    const totalEdit = document.querySelector('#total-edit');
+    const currentEdit = document.querySelector('#current-edit');
+    const width = window.getComputedStyle(clustersSlidesWrapper).width;
+    let offset = 0;
+    let slideIndexEdit = 1;
+    showSlidesEdit(slideIndexEdit);
+
+    if (clusterSliders.length < 3){
+        totalEdit.textContent = clusterSliders.length;
+    }
+
+    // автоматическая адаптация блока section-cluster__slider-inner 
+    // под ширину основного блока section-cluster__slide
+    slidesField.style.width = 100 * clusterSliders.length + '%';
+
+
+    clusterSliders.forEach(slide => {
+        slide.style.width = width;
+    });
+
+    nextSlide.addEventListener('click', ()=> {
+        if(offset == +width.slice(0, width.length - 2) * (clusterSliders.length - 1)){
+            offset = 0;
+        } else {
+            offset += +width.slice(0, width.length -2);
+        }
+        slidesField.style.transform = `translateX(-${offset}px)`;
+    });
+    prevSlide.addEventListener('click', ()=>{
+    if (offset == 0) {
+        offset = +width.slice(0, width.length - 2) * (clusterSliders.length - 1);
+    } else {
+        offset -= +width.slice(0, width.length - 2);
+    }
+        slidesField.style.transform = `translateX(-${offset}px)`;
+    });
+
+
+    function showSlidesEdit(c){
+        // если счётчик (с) будет равен 2, кнопке nextSlide присваивается атрибут disabled
+         if (c == clusterSliders.length) {
+            slideIndexEdit = 2;
+            nextSlide.setAttribute('disabled', 'disabled');
+            nextSlide.classList.remove('section-cluster__arrow-right');
+            nextSlide.classList.add('disabled-arr-right');
+         } else {
+            nextSlide.removeAttribute('disabled', 'disabled');
+            nextSlide.classList.add('section-cluster__arrow-right');
+            nextSlide.classList.remove('disabled-arr-right');
+         }
+         //наоборот, если счётчик равен 1 то кнопка prevSlide присваивается атрибуте disabled 
+         if ( c == 1) {
+            slideIndexEdit = 1;
+            prevSlide.setAttribute('disabled', 'disabled');
+            prevSlide.classList.remove('section-cluster__arrow-left');
+            prevSlide.classList.add('disabled-arr-left');
+         } else {
+            prevSlide.removeAttribute('disabled', 'disabled');
+            prevSlide.classList.add('section-cluster__arrow-left');
+            prevSlide.classList.remove('disabled-arr-left');
+         }
+
+         clusterSliders[slideIndexEdit - 1].style.setProperty('--animate-duration', '1s');
+
+         if (clusterSliders.length < 3){
+            currentEdit.textContent = slideIndexEdit;
+        }
+      }
+      
+      //Подсчет индикатора при клике
+      function plusSlidesEdit(k){
+        showSlidesEdit(slideIndexEdit += k);
+       }
+
+      prevSlide.addEventListener('click', () => {
+        plusSlidesEdit(-1);
+      });
+      nextSlide.addEventListener('click', () => {
+       plusSlidesEdit(+1);
+     });
+
+// section-cluster__slider end (slider end)
+
+
+
+
 });
+
+
+
+
+
