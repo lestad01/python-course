@@ -46,10 +46,10 @@
                     </div>
                     <div class="header__right-part">
                         <div class="header__right-part-block">
-                            <a href="#" class="header__right-part-link">
+                            <button data-modal class="header__right-part-link">
                                 <div></div>
                                 <span class="header__right-text">Стать резидентом</span>
-                            </a>
+                            </button>
                         </div>    
                     </div>
                 </div>
@@ -497,17 +497,66 @@
 
                     </div>
                     <div class="section-application-resident__right-block">
-                        <a href="#" class="section-application-resident__right-link">
-                            <h2 class="section-application-resident__heading-link">
+                        <button data-modal class="section-application-resident__right-btn">
+                            <h2 class="section-application-resident__heading-btn">
                                 Подать заявку
                             </h2>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
         <footer class="footer">
         </footer>
+        <!-- Модальное окно 'Стать резидентом' -->
+        <div class="modal">
+            <div class="modal-resident__dialog">
+                <div class="modal-resident__content">
+                    <form class="modal__form" action="#">
+                        <span data-close class="modal-resident__close"></span>
+                        <div class="modal-resident__block-for-btn">
+                            <div class="modal-resident__btn header__right-part-block">
+                                <a href="#" class="modal-resident__btn-link header__right-part-link">
+                                    <div></div>
+                                    <span class="modal-resident__btn-text header__right-text">Отправить</span>
+                                </a>
+                            </div> 
+                        </div> 
+                        <div class="modal-resident__left-part">
+                            <p class="modal-resident__title-text">
+                                Название организации
+                            </p>
+                            <input required name="name" type="search" class="modal-resident__input">
+                            <p class="modal-resident__title-text">
+                                ФИО контактного лица
+                            </p>
+                            <input required name="name" type="search" class="modal-resident__input">
+                            <p class="modal-resident__title-text">
+                                Сфера
+                            </p>
+                            <input required name="name" type="search" class="modal-resident__input">
+                        </div>
+                        <div class="modal-resident__right-part">
+                            <p class="modal-resident__title-text">
+                                ИНН компании
+                            </p>
+                            <input required name="name" type="search" class="modal-resident__input">
+                            <p class="modal-resident__title-text">
+                                Контактный номер
+                            </p>
+                            <input required name="name" type="search" class="modal-resident__input">
+                        </div>
+                        
+                    </form>
+                    <label class="modal-resident__checkbox-option">
+                        <input class="modal-resident__checkbox-input" type="checkbox">
+                        <span class="modal-resident__new-check"></span>
+                        Даю согласие на обработку <span class="modal-resident__checkbox-text">персональных данных</span> 
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Модальное окно 'Стать резидентом' -->
     </div>
 
 

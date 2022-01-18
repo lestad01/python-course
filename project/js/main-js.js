@@ -119,6 +119,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // section-cluster__slider end (slider end)
 
+//modal start
+    const modalTriggerResident = document.querySelectorAll('[data-modal');
+    const modal = document.querySelector('.modal');
+    const modalCloseBtn = document.querySelector('[data-close]');
+     
+
+    function closeBtn(){
+        modal.classList.add('modal-resident');
+        modal.classList.remove('modal-resident_show');
+        document.body.style.overflow = '';
+    }
+
+    modalTriggerResident.forEach(btn => {
+        btn.addEventListener('click', ()=> {
+            modal.classList.add('modal-resident_show');
+            modal.classList.remove('modal-resident');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    modalCloseBtn.addEventListener('click', closeBtn);
+
+    modal.addEventListener('click', (e)=> {
+        if(e.target === modal) {
+            closeBtn();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if(e.code === 'Escape' && modal.classList.contains('modal-resident_show')){
+            closeBtn();
+        }
+    });
+//modal end
 
 
 
