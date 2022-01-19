@@ -523,28 +523,39 @@
                             </div> 
                         </div> 
                         <div class="modal-resident__left-part">
-                            <p class="modal-resident__title-text">
-                                Название организации
-                            </p>
-                            <input required name="name" type="search" class="modal-resident__input">
-                            <p class="modal-resident__title-text">
-                                ФИО контактного лица
-                            </p>
-                            <input required name="name" type="search" class="modal-resident__input">
-                            <p class="modal-resident__title-text">
-                                Сфера
-                            </p>
-                            <input required name="name" type="search" class="modal-resident__input">
+                            <div class="modal-resident__left-part-box">
+                                <input required type="text" id="name-1" class="modal-resident__input">
+                                <label for="name-1" class="modal-resident__title-text">
+                                    Название организации
+                                </label>
+                                
+                            </div>
+                            <div class="modal-resident__left-part-box">
+                                <input required id="name-2" type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    ФИО контактного лица
+                                </label>
+                            </div>
+                            <div class="modal-resident__left-part-box">
+                                <input required id="name-3" type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    Сфера
+                                </label>
+                            </div>
                         </div>
                         <div class="modal-resident__right-part">
-                            <p class="modal-resident__title-text">
-                                ИНН компании
-                            </p>
-                            <input required name="name" type="search" class="modal-resident__input">
-                            <p class="modal-resident__title-text">
-                                Контактный номер
-                            </p>
-                            <input required name="name" type="search" class="modal-resident__input">
+                            <div class="modal-resident__right-part-box">  
+                                <input required id="name-4" type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    ИНН компании
+                                </label>
+                            </div>  
+                            <div class="modal-resident__right-part-box">  
+                                <input required id="name-5" type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    Контактный номер
+                                </label>
+                            </div>
                         </div>
                         
                     </form>

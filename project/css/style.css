@@ -65,6 +65,11 @@ input::-webkit-search-results-decoration {
     text-shadow:  1px 4px 5px rgb(255 255 255 / 70%);
     transition: all 0.4s;
 }
+.header__item-link:active{
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow:  none;
+    transition: all 0.4s;
+}
 .header__right-part{
     display: flex;
 }
@@ -96,6 +101,8 @@ input::-webkit-search-results-decoration {
 }
 .header__right-part-block:active div{
     border: 1.5px solid #00D1FF;
+    transition: all 0.2s;
+
 }
 .header__right-part-link > div {
     width: 70px;
@@ -755,15 +762,33 @@ input::-webkit-search-results-decoration {
     right: 120px
 }
 .modal-resident__left-part{
-    margin-right: 85px;
+    margin-right: 60px;
+}
+.modal-resident__left-part-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.modal-resident__right-part-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px
 }
 .modal-resident__title-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
     color: #FAFBFF;
+    pointer-events: none;
+    transition: 0.4s;
 }
 .modal-resident__input{
     padding: 3px 0 7px 5px;
@@ -784,6 +809,22 @@ input::-webkit-search-results-decoration {
     margin-bottom: 100px;
     margin-left: 215px;
 }
+input:focus ~ label, label:focus,
+input:valid ~ label{
+    top: -30px;
+    left: 0;
+    color: #00D1FF;
+  }
+  /* input:focus ~ label, label:focus {
+    color: blue;
+  } 
+  .modal-resident__input:focus ~ .modal-resident__title-text, .modal-resident__title-text:focus*/
+/* .modal-resident__left-part-box .inmodal-resident__input:valid ~ .modal-resident__title-text {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  } */
 .modal-resident__checkbox-option:hover{
     cursor:pointer;
 }
