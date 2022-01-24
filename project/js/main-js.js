@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
      
 
     function closeBtn(){
-        modal.classList.add('modal-resident');
         modal.classList.remove('modal-resident_show');
         document.body.style.overflow = '';
     }
@@ -134,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     modalTriggerResident.forEach(btn => {
         btn.addEventListener('click', ()=> {
             modal.classList.add('modal-resident_show');
-            modal.classList.remove('modal-resident');
             document.body.style.overflow = 'hidden';
         });
     });
@@ -146,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
             closeBtn();
         }
     });
-
     document.addEventListener('keydown', (e) => {
         if(e.code === 'Escape' && modal.classList.contains('modal-resident_show')){
             closeBtn();
@@ -154,6 +151,71 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 //modal end
 
+// anchorLinks start (плавное перемещение по ссылкам (якорям))
+const anchorFunction = function() {
+    const anchors = document.querySelectorAll('a[href*="#"]');
+    for (let anchor of anchors){
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        const blockID = anchor.getAttribute('href');
+        document.querySelector('' + blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+      });
+    }
+  };
+  anchorFunction();
+// anchorLinks end
+
+//validation form start
+const form = document.querySelector('.modal__form');
+const inputs = form.querySelectorAll('.modal-resident__input');
+const errorsInputs = form.querySelectorAll('.modal-resident__part-error');
+
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    for(let i = 0; i < inputs.length; i++){
+        let prevElement = inputs[i].previousElementSibling;
+        if (!inputs[i].value){
+            prevElement.style.display = 'flex';
+            inputs[i].classList.add('modal-resident__input-error');
+        }
+    }
+    // errorInput.classList.contains('modal-resident__part-error')
+    errorsInputs.forEach(errorInput => {
+        errorInput.addEventListener('click', function(event){
+            let err = errorInput.nextElementSibling;
+            if (event.target.className == 'modal-resident__error-text'){
+                errorInput.classList.remove('modal-resident__part-error');
+                errorInput.style.display = 'none';
+                err.classList.remove('modal-resident__input-error');
+            } else {
+                errorInput.classList.add('modal-resident__part-error');
+                errorInput.style.display = 'flex';
+                err.classList.add('modal-resident__input-error');
+            }
+        });
+    });
+});
+//добавление/удаление классов error-инпутам
+
+//добавление при введении в инпут
+inputs.forEach(input => {
+    input.addEventListener('input', ()=>{
+        if(input.value > 0){
+            input.classList.add('modal-resident__input-active');
+        } else {
+            input.classList.remove('modal-resident__input-active');
+        }
+    });
+});
+    
+
+
+
+//validation form end
 
 
 });

@@ -23,22 +23,22 @@
                     <div class="header__middle-part">
                         <nav class="header__nav">
                             <li class="header__item">
-                                <a class="header__item-link" href="#">
+                                <a class="header__item-link" href="#privileges">
                                     О долине
                                 </a>
                             </li>
                             <li class="header__item">
-                                <a class="header__item-link" href="#">
+                                <a class="header__item-link" href="#ecosystem">
                                     Экосистема
                                 </a>
                             </li>
                             <li class="header__item">
-                                <a class="header__item-link" href="#">
+                                <a class="header__item-link" href="#location">
                                     Расположение
                                 </a>
                             </li>
                             <li class="header__item">
-                                <a class="header__item-link" href="#">
+                                <a class="header__item-link" href="#cluster">
                                     Кластеры
                                 </a>
                             </li>
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </article>
-        <section class="privileges">
+        <section id="privileges" class="privileges">
             <div class="container section-privileges__container">
                 <h3 class="section_heading">
                     Какие льготы вы получите, <br> став резидентом?
@@ -168,7 +168,7 @@
                 </div>
             </div>
         </section>
-        <section class="ecosystem">
+        <section id="ecosystem" class="ecosystem">
             <div class="container section-ecosystem__container">
                 <h3 class="section_heading section_heading-2">
                     Что вам даст экосистема долины?
@@ -176,7 +176,7 @@
                 <div class="section-ecosystem__wrapper">
                     <div class="section-ecosystem__card">
                         <p class="section-ecosystem__text text-card_1">
-                            8 тематических кластеров, ориентированныхна приоритетные научные направления.
+                            8 тематических кластеров, ориентированных на приоритетные научные направления.
                         </p>
                     </div>
                     <div class="section-ecosystem__card">
@@ -196,7 +196,7 @@
                     </div>
                     <div class="section-ecosystem__card">
                         <p class="section-ecosystem__text text-card_5">
-                            Высококвалифицированные консалтинговые услуги .
+                            Высококвалифицированные консалтинговые услуги.
                         </p>
                     </div>
                     <div class="section-ecosystem__card">
@@ -206,17 +206,19 @@
                     </div>
                     <div class="section-ecosystem__card">
                         <p class="section-ecosystem__text text-card_7">
-                            Широкая инфраструктура для осуществления вами инвестиционной деятельностив инновационные проекты на ранней стадии.
+                            Широкая инфраструктура для осуществления вами инвестиционной деятельности в инновационные проекты на ранней стадии.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="location">
+        <section id="location" class="location">
             <div class="container section-location__container">
+                <h3 class="section_heading">
+                    Расположение долины
+                </h3>
                 <div class="yandex-map">
                     <div id="map">
-                      <!-- style="width: 1225px; height: 700px" -->
                     </div>
                     <div class="section-location__yandex-menu">
                         <h3 class="section-location__yandex-menu-heading">
@@ -241,7 +243,7 @@
                 </div>
             </div>
         </section>
-        <section class="cluster">
+        <section id="cluster" class="cluster">
             <div class="container section-cluster__container">
                 <h3 class="section_heading">
                     Кластеры ИНТЦ
@@ -266,7 +268,7 @@
                         </div>
                     </div>
                     <div class="section-cluster__block section-cluster_img-2">
-                        <div class="section-cluster__inside-block section-cluster_padding">
+                        <div class="section-cluster__inside-block">
                             <h3 class="section-cluster__heading">
                                 «Образовательный» 
                             </h3>
@@ -509,60 +511,106 @@
         <footer class="footer">
         </footer>
         <!-- Модальное окно 'Стать резидентом' -->
-        <div class="modal">
+        <div class="modal modal-resident">
             <div class="modal-resident__dialog">
                 <div class="modal-resident__content">
                     <form class="modal__form" action="#">
                         <span data-close class="modal-resident__close"></span>
                         <div class="modal-resident__block-for-btn">
                             <div class="modal-resident__btn header__right-part-block">
-                                <a href="#" class="modal-resident__btn-link header__right-part-link">
+                                <button type="submit" class="modal-resident__btn-link header__right-part-link">
                                     <div></div>
                                     <span class="modal-resident__btn-text header__right-text">Отправить</span>
-                                </a>
+                                </button>
                             </div> 
                         </div> 
                         <div class="modal-resident__left-part">
-                            <div class="modal-resident__left-part-box">
-                                <input required type="text" id="name-1" class="modal-resident__input">
-                                <label for="name-1" class="modal-resident__title-text">
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z" fill="#FF4141"/>
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3"/>
+                                        </svg>
+                                        <span class="modal-resident__error-text">
+                                            Обязательное поле
+                                        </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
                                     Название организации
                                 </label>
-                                
                             </div>
-                            <div class="modal-resident__left-part-box">
-                                <input required id="name-2" type="text" class="modal-resident__input">
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z" fill="#FF4141"/>
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3"/>
+                                        </svg>
+                                        <span class="modal-resident__error-text">
+                                            Обязательное поле
+                                        </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
                                 <label class="modal-resident__title-text">
                                     ФИО контактного лица
                                 </label>
                             </div>
-                            <div class="modal-resident__left-part-box">
-                                <input required id="name-3" type="text" class="modal-resident__input">
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z" fill="#FF4141"/>
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3"/>
+                                        </svg>
+                                        <span class="modal-resident__error-text">
+                                            Обязательное поле
+                                        </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
                                 <label class="modal-resident__title-text">
                                     Сфера
                                 </label>
                             </div>
                         </div>
                         <div class="modal-resident__right-part">
-                            <div class="modal-resident__right-part-box">  
-                                <input required id="name-4" type="text" class="modal-resident__input">
+                            <div class="modal-resident__part-box">  
+                                <div class="modal-resident__part-error">
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z" fill="#FF4141"/>
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3"/>
+                                        </svg>
+                                        <span class="modal-resident__error-text">
+                                            Обязательное поле
+                                        </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
                                 <label class="modal-resident__title-text">
                                     ИНН компании
                                 </label>
                             </div>  
-                            <div class="modal-resident__right-part-box">  
-                                <input required id="name-5" type="text" class="modal-resident__input">
+                            <div class="modal-resident__part-box">  
+                                <div class="modal-resident__part-error">
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z" fill="#FF4141"/>
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3"/>
+                                        </svg>
+                                        <span class="modal-resident__error-text">
+                                            Обязательное поле
+                                        </span>
+                                </div>
+                                <input name="phone" class="modal-resident__input">
                                 <label class="modal-resident__title-text">
                                     Контактный номер
                                 </label>
+                              
                             </div>
                         </div>
-                        
                     </form>
                     <label class="modal-resident__checkbox-option">
                         <input class="modal-resident__checkbox-input" type="checkbox">
                         <span class="modal-resident__new-check"></span>
-                        Даю согласие на обработку <span class="modal-resident__checkbox-text">персональных данных</span> 
+                        Даю согласие на обработку <a download target="_blank" rel="noopener noreferrer" href="doc/Политика_в_отношении_обработки_персональных_данных.docx"
+                        style="text-decoration: underline;"
+                        class="modal-resident__checkbox-text">персональных данных</a> 
                     </label>
                 </div>
             </div>
