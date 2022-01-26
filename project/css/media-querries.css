@@ -408,5 +408,24 @@
         margin-top: 20px;
     }
 }
+@media(max-width: 800px){
+    .header__content{
+        margin-top: 22px;
+    }
+    .header__left-part,.header__middle-part,.header__right-part{
+        display: none;
+    }
+    .container{
+        width: 95%;
+    }
+    .header__nav-adaptive-block-left, .header__nav-adaptive-block-middle,
+    .header__burger {
+        display: block;
+    }
+
+}
+/* @media(max-width: 650px){
+
+} */
 
 /* media queries end */

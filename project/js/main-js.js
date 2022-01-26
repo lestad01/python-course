@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.remove('modal-resident_show');
         document.body.style.overflow = '';
     }
-
     modalTriggerResident.forEach(btn => {
         btn.addEventListener('click', ()=> {
             modal.classList.add('modal-resident_show');
@@ -211,16 +210,40 @@ inputs.forEach(input => {
         }
     });
 });
-    
-
-
 
 //validation form end
 
+//burger-menu and adaptive-menu start
+// document.addEventListener('touchstart', addClassBurger, {passive: true}); // установка пассивного прослушивателя событий
+const headerBurger = document.querySelector('.header__burger');
+const headerBurgerMenu = document.querySelector('.header__pull-out-menu-block');
+const closeBurger = document.querySelector('.header__top-content-burger');
 
+
+function closeBurgerMenu(){
+    headerBurgerMenu.classList.remove('header__pull-out-menu-active');
+    document.body.style.overflow = '';
+}
+    headerBurger.addEventListener('touchstart', (e)=> {
+        e.preventDefault();
+        headerBurgerMenu.classList.add('header__pull-out-menu-active');
+        document.body.style.overflow = 'hidden';
+    });
+
+closeBurger.addEventListener('touchstart', (e)=> {
+    e.preventDefault();
+    closeBurgerMenu();
 });
 
+headerBurgerMenu.addEventListener('touchstart', (e)=> {
+    e.preventDefault();
+    if(e.target === headerBurgerMenu) {
+        closeBurgerMenu();
+    }
+})
 
 
-
+//burger-menu and adaptive-menu end
+    
+});
 
