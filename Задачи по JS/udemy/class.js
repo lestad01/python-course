@@ -14,7 +14,7 @@ class Rectangle {
 
 class ColoredRectangleWithText extends Rectangle {
     constructor (height, width, text, bgColor){
-        super(height, width);
+        super(height, width); //всегда на первом месте и передает от главного класса все свойства
         this.text = text;
         this.bgColor = bgColor;
     }
@@ -29,11 +29,11 @@ div.showMyProps();
 console.log(div.calcArea());
 
 
-// const square = new Rectangle(10, 10);
-// const long = new Rectangle(20, 100);
+const square = new Rectangle(10, 10);
+const long = new Rectangle(20, 100);
 
-// console.log(square.calcArea());
-// console.log(long.calcArea());
+console.log(square.calcArea());
+console.log(long.calcArea());
 
 
 

@@ -671,6 +671,7 @@ input::-webkit-search-results-decoration {
 }
 .section__cluster-main-block{
     margin-top: 140px;
+    padding-bottom: 35px;
     position: relative;
 }
 .swiper-cluster {
@@ -774,6 +775,23 @@ input::-webkit-search-results-decoration {
     font-weight: bold;
     font-size: 25px;
     line-height: 30px;
+}
+
+.swiper-cluster-adaptive{
+    display: none;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.section-cluster__slider-block-adaptive{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-paginator-adaptive{
+    position: absolute;
+    text-align: center;
 }
 
 /* section-location end */

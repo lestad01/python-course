@@ -260,6 +260,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
           });
         // slider cluster end
+        // swiper adaptive start
+        const swiperClusterAdaptive = new Swiper('.swiper-cluster-adaptive', {
+            pagination: {
+                el: '.swiper-paginator-adaptive',
+                //буллеты
+              clickable: true
+            },
+
+          });
+        // swiper adaptive end
 
     //swiper adaptive (800px) start
     const swiperPrivAdaptive = new Swiper('.swiper', {

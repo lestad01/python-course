@@ -1,8 +1,14 @@
 "use strict";
 
+// function showThis(){
+//     console.log(this);
+// }
+// showThis();
 
 // function showThis(a,b) {
+//     console.log(this);
 //     function sum() {
+//         console.log(this);
 //         return a + b;
 //     }
 
@@ -67,11 +73,11 @@
 //     this.style.backgroundColor = 'red';
 // });
 
-const btn = document.querySelector('button');
-btn.addEventListener('click', ()=> {
-    // const.log(this);
-    this.style.backgroundColor = 'red';
-});
+// const btn = document.querySelector('button');
+// btn.addEventListener('click', ()=> {
+//     // const.log(this);
+//     this.style.backgroundColor = 'red';
+// });
 
 const obj = {
     num: 5,
@@ -87,6 +93,7 @@ const obj = {
 obj.sayNumber();
 
 
-const double = (a)=> a * 2;
+const double = (a)=> a * 2; //если функция прописывается 
+//в одну стркоу можешь прописывать без круглых скобок
 
 
