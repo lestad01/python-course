@@ -30,94 +30,72 @@ document.addEventListener('DOMContentLoaded', function () {
         myMap.geoObjects.add(myPlacemark);
     });
 
-    //section-cluster__slider start (slider start)
-    // const clusterSliders = document.querySelectorAll('.section-cluster__slide');
-    // const prevSlide = document.querySelector('.section-cluster__arrow-left');
-    // const nextSlide = document.querySelector('.section-cluster__arrow-right');
-    // const clustersSlidesWrapper = document.querySelector('.section-cluster__slider-block');
-    // const slidesField = document.querySelector('.section-cluster__slider-inner');
-    // const totalEdit = document.querySelector('#total-edit');
-    // const currentEdit = document.querySelector('#current-edit');
-    // const width = window.getComputedStyle(clustersSlidesWrapper).width;
-    // let offset = 0;
-    // let slideIndexEdit = 1;
-    // showSlidesEdit(slideIndexEdit);
+     //validation form start
+     const form = document.querySelector('.modal__form');
+     const inputs = form.querySelectorAll('.modal-resident__input');
+     const errorsInputs = form.querySelectorAll('.modal-resident__part-error');
 
-    // if (clusterSliders.length < 3) {
-    //     totalEdit.textContent = clusterSliders.length;
-    // }
+     //очистка формы от классов при выходе из формы
+     function clearAllClasses(){
+        for (let q = 0; q < inputs.length; q++){
+            inputs[q].classList.remove('modal-resident__input-active');
+            inputs[q].classList.remove('modal-resident__input-error');
+        }
+        for (let s = 0; s < errorsInputs.length; s++){
+            errorsInputs[s].style.display = 'none';
+        }    
+     }
+     function clearClasses(){
+        for (let q = 0; q < inputs.length; q++){
+            inputs[q].classList.remove('modal-resident__input-active');
+        } 
+     }
 
-    // автоматическая адаптация блока section-cluster__slider-inner 
-    // под ширину основного блока section-cluster__slide
-    // slidesField.style.width = 100 * clusterSliders.length + '%';
+     //действия с формой
+     form.addEventListener('submit', function (event) {
+         event.preventDefault();
+ 
+         for (let i = 0; i < inputs.length; i++) {
+             let prevElement = inputs[i].previousElementSibling;
+             if (!inputs[i].value) {
+                 prevElement.style.display = 'flex';
+                 inputs[i].classList.add('modal-resident__input-error');
+                 inputs[i].classList.add('modal-resident__input-active');
+             }
+         }
+         errorsInputs.forEach(errorInput => {
+             errorInput.addEventListener('click', function (event) {
+                 let err = errorInput.nextElementSibling;
+                 if (event.target.className == 'modal-resident__error-text') {
+                     errorInput.classList.remove('modal-resident__part-error');
+                     errorInput.style.display = 'none';
+                     err.classList.remove('modal-resident__input-error');
+                 } else {
+                     errorInput.classList.add('modal-resident__part-error');
+                     errorInput.style.display = 'flex';
+                     err.classList.add('modal-resident__input-error');
+                 }
+             });
+         });
+        
+         clearClasses();
+         form.reset();
+     });
+     //добавление/удаление классов error-инпутам
+ 
+     //добавление класса при введении в инпут
+     inputs.forEach(input => {
+         input.addEventListener('input', () => {
+            if(input.value == ''){
+                input.classList.remove('modal-resident__input-active');
+            } else {
+                input.classList.add('modal-resident__input-active');
+            }
+         });
+     });
+ 
+     //validation form end
 
-
-    // clusterSliders.forEach(slide => {
-    //     slide.style.width = width;
-    // });
-
-    // nextSlide.addEventListener('click', () => {
-    //     if (offset == +width.slice(0, width.length - 2) * (clusterSliders.length - 1)) {
-    //         offset = 0;
-    //     } else {
-    //         offset += +width.slice(0, width.length - 2);
-    //     }
-    //     slidesField.style.transform = `translateX(-${offset}px)`;
-    // });
-    // prevSlide.addEventListener('click', () => {
-    //     if (offset == 0) {
-    //         offset = +width.slice(0, width.length - 2) * (clusterSliders.length - 1);
-    //     } else {
-    //         offset -= +width.slice(0, width.length - 2);
-    //     }
-    //     slidesField.style.transform = `translateX(-${offset}px)`;
-    // });
-
-
-    // function showSlidesEdit(c) {
-    //     // если счётчик (с) будет равен 2, кнопке nextSlide присваивается атрибут disabled
-    //     if (c == clusterSliders.length) {
-    //         slideIndexEdit = 2;
-    //         nextSlide.setAttribute('disabled', 'disabled');
-    //         nextSlide.classList.remove('section-cluster__arrow-right');
-    //         nextSlide.classList.add('disabled-arr-right');
-    //     } else {
-    //         nextSlide.removeAttribute('disabled', 'disabled');
-    //         nextSlide.classList.add('section-cluster__arrow-right');
-    //         nextSlide.classList.remove('disabled-arr-right');
-    //     }
-    //     //наоборот, если счётчик равен 1 то кнопка prevSlide присваивается атрибуте disabled 
-    //     if (c == 1) {
-    //         slideIndexEdit = 1;
-    //         prevSlide.setAttribute('disabled', 'disabled');
-    //         prevSlide.classList.remove('section-cluster__arrow-left');
-    //         prevSlide.classList.add('disabled-arr-left');
-    //     } else {
-    //         prevSlide.removeAttribute('disabled', 'disabled');
-    //         prevSlide.classList.add('section-cluster__arrow-left');
-    //         prevSlide.classList.remove('disabled-arr-left');
-    //     }
-
-    //     clusterSliders[slideIndexEdit - 1].style.setProperty('--animate-duration', '1s');
-
-    //     if (clusterSliders.length < 3) {
-    //         currentEdit.textContent = slideIndexEdit;
-    //     }
-    // }
-
-    //Подсчет индикатора при клике
-    // function plusSlidesEdit(k) {
-    //     showSlidesEdit(slideIndexEdit += k);
-    // }
-
-    // prevSlide.addEventListener('click', () => {
-    //     plusSlidesEdit(-1);
-    // });
-    // nextSlide.addEventListener('click', () => {
-    //     plusSlidesEdit(+1);
-    // });
-
-    // section-cluster__slider end (slider end)
 
     //modal start
     const modalTriggerResident = document.querySelectorAll('[data-modal');
@@ -128,6 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeBtn() {
         modal.classList.remove('modal-resident_show');
         document.body.style.overflow = '';
+        clearAllClasses();
+        form.reset();
     }
     modalTriggerResident.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -167,51 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     anchorFunction();
     // anchorLinks end
 
-    //validation form start
-    const form = document.querySelector('.modal__form');
-    const inputs = form.querySelectorAll('.modal-resident__input');
-    const errorsInputs = form.querySelectorAll('.modal-resident__part-error');
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        for (let i = 0; i < inputs.length; i++) {
-            let prevElement = inputs[i].previousElementSibling;
-            if (!inputs[i].value) {
-                prevElement.style.display = 'flex';
-                inputs[i].classList.add('modal-resident__input-error');
-            }
-        }
-        // errorInput.classList.contains('modal-resident__part-error')
-        errorsInputs.forEach(errorInput => {
-            errorInput.addEventListener('click', function (event) {
-                let err = errorInput.nextElementSibling;
-                if (event.target.className == 'modal-resident__error-text') {
-                    errorInput.classList.remove('modal-resident__part-error');
-                    errorInput.style.display = 'none';
-                    err.classList.remove('modal-resident__input-error');
-                } else {
-                    errorInput.classList.add('modal-resident__part-error');
-                    errorInput.style.display = 'flex';
-                    err.classList.add('modal-resident__input-error');
-                }
-            });
-        });
-    });
-    //добавление/удаление классов error-инпутам
-
-    //добавление при введении в инпут
-    inputs.forEach(input => {
-        input.addEventListener('input', () => {
-            if (input.value > 0) {
-                input.classList.add('modal-resident__input-active');
-            } else {
-                input.classList.remove('modal-resident__input-active');
-            }
-        });
-    });
-
-    //validation form end
+   
 
     //burger-menu and adaptive-menu start
     // document.addEventListener('touchstart', addClassBurger, {passive: true}); // установка пассивного прослушивателя событий
