@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', function () {
     //Map
     // Функция ymaps.ready() будет вызвана, когда
     // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             center: [55.699844, 37.520939],
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
-            zoom: 14,
+            zoom: 13.5,
             controls: []
         });
         myPlacemark = new ymaps.Placemark([55.693213, 37.512503], {
@@ -180,22 +180,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-        // slider cluster start
-        const swiperCluster = new Swiper('.swiper-cluster', {
-            //Стрелки
-            navigation:{
-                // nextEl: '.swiper-button-next',
-                // prevEl: '.swiper-button-prev'
-                nextEl: '.swiper-cluster-button-next',
-                prevEl: '.swiper-cluster-button-prev'
-            },
-            pagination:{
-                el: '.swiper-paginator',
-                type: 'fraction',
-            },
-
-          });
-        // slider cluster end
         // swiper adaptive start
         const swiperClusterAdaptive = new Swiper('.swiper-cluster-adaptive', {
             pagination: {

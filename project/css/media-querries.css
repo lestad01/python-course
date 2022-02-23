@@ -3,23 +3,16 @@
     .container {
         width: 69%;
     }
-    .article-banner__wrapper {
-        margin-left: 32%;
-    }
     .section-ecosystem__card:not(:nth-child(4n)) {
         margin-right: 35px;
     }
     .section-cluster__block:not(:nth-child(4n)) {
-        /* margin-right: 60px; */
         margin-right: 15px;
     }
 }
 @media (max-width: 1921px) {
     .container {
         width: 70%;
-    }
-    .article-banner__wrapper {
-        margin-left: 31%;
     }
     .section-ecosystem__card:not(:nth-child(4n)) {
         margin-right: 43px;
@@ -36,12 +29,25 @@
         height: 250px;
     }
 }
+@media (max-width: 1900px) {
+    .section-ecosystem__card:not(:nth-child(4n)) {
+        margin-right: 43px;
+    }
+    .section-ecosystem__card {
+        width: 290px;
+        height: 240px;
+    }
+    .section-cluster__block:not(:nth-child(4n)) {
+        margin-right: 43px;
+    }
+    .section-cluster__block {
+        width: 290px;
+        height: 240px;
+    }
+}
 @media (max-width: 1825px) {
     .container {
         width: 75%;
-    }
-    .article-banner__wrapper {
-        margin-left: 27%;
     }
     .section-ecosystem__card {
         width: 290px;
@@ -61,9 +67,6 @@
 @media (max-width: 1751px) {
     .container {
         width: 75%;
-    }
-    .article-banner__wrapper {
-        margin-left: 27%;
     }
     .section-ecosystem__card:not(:nth-child(4n)) {
         margin-right: 30px;
@@ -90,9 +93,6 @@
         width: 80%;
     }
 
-    .article-banner__wrapper {
-        margin-left: 22%;
-    }
     .text-card_6 {
         margin: 88px 40px;
     }
@@ -122,9 +122,6 @@
 @media(max-width: 1441px) {
     .article-banner__text {
         width: 80%;
-    }
-    .article-banner__wrapper {
-        margin-left: 20%;
     }
 
     .article-banner__block-right-part {
@@ -225,9 +222,6 @@
         line-height: 22px;
     }
 
-    .article-banner__wrapper {
-        margin-left: 10%;
-    }
 
     .article-banner__heading {
         font-size: 40px;
@@ -720,9 +714,6 @@
     .article-banner__block-right-part {
         width: 46%;
     }
-    .article-banner__wrapper {
-        margin-left: 2%;
-    }
     .article-banner__text {
         width: 93%;
     }
@@ -764,7 +755,7 @@
         width: 225px;
         padding: 5px 0px;
     }
-    .swiper-cluster{
+    .swiper-container{
         display: none;
     }
     .swiper-cluster-adaptive{
@@ -817,7 +808,6 @@
     }
     /* modal start */
     .modal-resident__checkbox-option{
-        margin-left: 185px;
         font-size: 16px;
         line-height: 19px;
     }
@@ -936,7 +926,6 @@
         line-height: 19px;
     }
     .modal-resident__checkbox-option {
-        margin-left: 140px;
         font-size: 14px;
         line-height: 19px;
     }
@@ -955,7 +944,6 @@
         align-items: center;
     }
     .article-banner__wrapper {
-        margin-left: 9%;
         margin-bottom: 30px;
     }
     .article-banner__text {
@@ -967,6 +955,7 @@
     .article-banner__block-right-part {
         width: 100%;
         text-align: center;
+        justify-content: center;
     }
     .article-banner__img-banner {
         height: 220px;
@@ -1104,8 +1093,8 @@
     }
     .modal-resident__checkbox-option {
         position: relative;
+        left: 3%;
         align-items: center;
-        margin-left: 76px;
         font-size: 12px;
         line-height: 16px;
     }
@@ -1126,9 +1115,6 @@
 @media(max-width: 501px){
     .article-banner__text {
         width: 98%;
-    }
-    .article-banner__wrapper {
-        margin-left: 2%;
     }
     .section-privileges__bot, .section-privileges__elem {
         max-width: 175px;
@@ -1201,9 +1187,6 @@
     .article-banner__text {
         width: 95%;
     }
-    .article-banner__wrapper {
-        margin-left: 0;
-    }
     .article-banner__block-right-part {
         width: 304px;
         text-align: center;
@@ -1222,7 +1205,7 @@
         max-width: 310px;
     }
     .section-privileges__right-adaptive {
-        width: 100%;
+        width: 310px;
     }
     .section-privileges__right-text-block {
         margin-top: 15px;
@@ -1237,6 +1220,9 @@
     .section-cluster__block:not(:nth-child(4n)),
     .section-cluster__block  {
         margin-right: 0;
+    }
+    .section-ecosystem__card:last-child {
+        margin: 0;
     }
     .section-ecosystem__card {
         max-width: 310px;
@@ -1263,7 +1249,7 @@
         height: 300px;
     }
     #map {
-        height: 300px;
+        height: 270px;
     }
     .section-location__yandex-menu-heading {
         margin: 5px 0;
@@ -1292,12 +1278,12 @@
         top: 70px;
     }
     .modal-resident__checkbox-option {
-        margin-left: 50px;
         font-size: 10px;
     }
     .modal-resident__new-check {
         margin-left: -16px;
     }
+
 }
 
 /* media queries end */

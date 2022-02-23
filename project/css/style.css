@@ -198,18 +198,18 @@ input::-webkit-search-results-decoration {
 
 .article-banner__block {
     display: flex;
+    justify-content: center;
 }
 
 .article-banner__block-left-part {
     display: flex;
-    width: 60%;
+    width: 50%;
 }
 
 .article-banner__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 42%;
 }
 
 .article-banner__heading {
@@ -222,7 +222,7 @@ input::-webkit-search-results-decoration {
 }
 
 .article-banner__text {
-    width: 90%;
+    width: 70%;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: normal;
@@ -231,8 +231,9 @@ input::-webkit-search-results-decoration {
 }
 
 .article-banner__block-right-part {
-    width: 64%;
-    text-align: end;
+    width: 50%;
+    display: flex;
+    justify-content: end;
 }
 
 .article-banner__img-banner {
@@ -670,11 +671,11 @@ input::-webkit-search-results-decoration {
     justify-content: space-between;
 }
 .section__cluster-main-block{
-    margin-top: 140px;
+    margin-top: 75px;
     padding-bottom: 35px;
     position: relative;
 }
-.swiper-cluster {
+.swiper-container {
     overflow: hidden;
     max-width: 100%;
 }
@@ -712,22 +713,6 @@ input::-webkit-search-results-decoration {
     transition: all 0.4s;
 }
 
-.swiper-cluster-button-next:hover{
-    filter: drop-shadow(-1px -1px 8px #FAFBFF);
-}
-.swiper-cluster-button-prev:hover{
-    filter: drop-shadow(-1px -1px 8px #FAFBFF);
-}
-.swiper-cluster-button-prev:active{
-    transform: rotate(-90deg);
-    border: none;
-    transition: all 0.3s;
-}
-.swiper-cluster-button-next:active{
-    transform: rotate(90deg);
-    border: none;
-    transition: all 0.3s;
-}
 
 .swiper-img{
     width: 15px;
@@ -740,7 +725,7 @@ input::-webkit-search-results-decoration {
     transition: all 0.4s;
 }
 
-.swiper-button-disabled{
+/* .swiper-button-disabled{
     border: 1px solid rgba(255, 255, 255, 0.5);
     cursor: auto;
     transition: all 0.4s;
@@ -748,7 +733,7 @@ input::-webkit-search-results-decoration {
 
 .swiper-button-disabled .swiper-img path{
     fill-opacity: 0.5;
-}
+} */
 
 .swiper-button-disabled:active{
     transform: none;
@@ -855,6 +840,9 @@ input::-webkit-search-results-decoration {
 /* section-features end */
 
 /* section-application-resident start */
+.application-resident{
+    margin-bottom: 80px;
+}
 .section-application-resident__container {
     margin-top: 100px;
 }
@@ -1079,10 +1067,8 @@ input::-webkit-search-results-decoration {
 }
 
 .modal-resident__checkbox-option {
-    /* margin-bottom: 100px;
-    margin-left: 215px; */
     position: absolute;
-    bottom: -16%;
+    bottom: 5%;
     left: 30%;
 }
 
