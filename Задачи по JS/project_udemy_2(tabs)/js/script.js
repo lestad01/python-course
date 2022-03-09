@@ -220,10 +220,22 @@ window.addEventListener('DOMContentLoaded', function() {
     };
 
     forms.forEach(item => {
-        postData(item);
+        bindPostData(item);
     });
+    //постинг данных (асинхронный код - не ждет другой код)
+    const postData = async (url, data) => {
+        const result = await fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: data
+        });
+        return await result.json();
+    };
 
-    function postData(form) {
+    //привязка постинга данных
+    function bindPostData(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -248,14 +260,14 @@ window.addEventListener('DOMContentLoaded', function() {
             //Запрос fetc
             // const request = new XMLHttpRequest();
             // request.open('POST', 'server.php');
-            fetch('server1.php',{
-                method: "POST",
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(object)
-            })
-            .then(data => data.text())
+            // fetch('server1.php',{
+            //     method: "POST",
+            //     headers: {
+            //         'Content-type': 'application/json'
+            //     },
+            //     body: JSON.stringify(object)
+            // })
+            postData('http://localhost:3000/requests', JSON.stringify(object))
             .then(data => {
                     console.log(data);
                     showThanksModal(message.success);
@@ -263,7 +275,7 @@ window.addEventListener('DOMContentLoaded', function() {
             }).catch(()=> {
                 showThanksModal(message.failure);
             }).finally(()=> {
-                form.reset();
+                //form.reset();
             });
         });
     }
@@ -291,9 +303,9 @@ window.addEventListener('DOMContentLoaded', function() {
         }, 4000);
     }
 
-    fetch('http://localhost:3000/menu')
-        .then(data => data.json())
-        .then(res => console.log(res));
+    // fetch('http://localhost:3000/menu')
+    //     .then(data => data.json())
+    //     .then(res => console.log(res));
     //fetch API 
     // fetch('https://jsonplaceholder.typicode.com/posts', {
     //     method: "POST",
