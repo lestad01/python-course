@@ -521,5 +521,6 @@ window.addEventListener('DOMContentLoaded', function() {
     // next.addEventListener('click', ()=> {
     //     plusSlides(+1);
     // });
+    
 
 });
