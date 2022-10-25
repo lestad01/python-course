@@ -537,3 +537,60 @@ return newArr;
 let arra =  ["Привет", "тебе", "мальчик", "Миша"];
 
 console.log(removeEveryOther(arra));
+
+
+
+function stringToArray(string){
+  // code code code
+  let arr = string.split(' ')
+  return arr;
+}
+
+const stringToArray = string => string.split(' ');
+
+
+console.log(stringToArray("Привет тебе миша sqq"));
+
+
+//Найти первое непоследовательное число
+
+function firstNonConsecutive (arr) {
+for (let i = 1; i < arr.length; i++) {
+  if (arr[i] - arr[i - 1] != 1)
+    return arr[i];
+}
+return null;
+}
+console.log(firstNonConsecutive([1,2,3]))
+
+
+//Получив список целых чисел, определите, является ли сумма его элементов четной или нечетной.
+//Дайте свой ответ в виде строки, соответствующей "odd"или"even".
+//Если входной массив пуст, считайте его следующим образом: [0](массив с нулем).
+
+function oddOrEven(array) {
+  //enter code here
+  let sum = 0;
+  for (let i = 0; i < array.length; i++){
+    let elem = array[i];
+    sum += elem;
+
+  }
+  if (sum % 2 === 0){
+    return('even');
+  } else {
+    return('odd');
+  }
+}
+console.log(oddOrEven([1,2]))
+
+
+function oddOrEven(array) {
+    return array.reduce( function (sum, item) { 
+      return sum + item 
+    }, 0)% 2 == 0 ? 'even': 'odd';
+}
+console.log(oddOrEven([4]))
+
+
+
