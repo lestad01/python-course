@@ -594,3 +594,55 @@ console.log(oddOrEven([4]))
 
 
 
+
+// В переменную password запишите строку с любым произвольным паролем. Проверьте надёжность пароля с помощью условного оператора if. 
+// Пароль является надёжным, когда в нём есть хотя бы четыре символа, один из которых — это дефис или нижнее подчёркивание. 
+// Выведите в консоль сообщения «Пароль надёжный» или «Пароль недостаточно надёжный».
+
+
+const password = 'qazz-';
+
+// if (password.length > 4 && password.length === '_' || password.length === '-'){
+//   console.log('Correct password!')
+// } else {
+//   console.log('Invalid password!')
+// }
+
+//Варианот с оператором indexOff  и тернарным оператором
+((password.indexOf('_') || password.indexOf('-')) && password.length > 4) ? console.log('Correct password!') : console.log('Invalid password!');
+
+// В переменных userName, userSurname даны имя и фамилия пользователя. При этом в строках беспорядок с большими и маленькими буквами, и нужно оформить строки единообразно. 
+// Для этого первые буквы имени и фамилии приведите к верхнему регистру (большие буквы), а оставшиеся — к нижнему (маленькие буквы). 
+// Запишите результат в новые переменные и выведите их значения с помощью console.log. С помощью тернарных операторов и console.log выведите сообщение «Имя было преобразовано» или 
+// «Имя осталось без изменений» для имени и фамилии в зависимости от того, были ли исходные строки равны преобразованным.
+
+
+let name = 'Alex';
+let surName = 'Chernov';
+let firstStr1 = name.substring(0,1).toUpperCase();
+let firstStr2 = surName.substring(0,1).toUpperCase();
+
+let lastStr1 = name.substring(1).toLowerCase();
+let lastStr2 = surName.substring(1).toLowerCase();
+
+let strName = firstStr1 + lastStr1;
+let strSurName = firstStr2 + lastStr2;
+
+
+
+// if (name[0] != firstStr1 && surName[0] != firstStr2){
+//   strName += firstStr1 + lastStr1;
+//   strSurName += firstStr2 + lastStr2;
+//   console.log(`Имя ${strName} и фамилия ${strSurName} были преобразованы `);
+// } else {
+//   console.log('Имя и фамилия остались без изменений');
+// }
+
+
+(name[0] != firstStr1 && surName[0] != firstStr2) ? console.log(`Имя ${strName} и фамилия ${strSurName} были преобразованы `) : console.log('Имя и фамилия остались без изменений');
+
+
+
+// В переменной number записано число. Необходимо с помощью console.log вывести сообщение, указывающее на чётность или нечётность числа.
+let number = 4;
+(number % 2 == 0) ? console.log('Чётное чилсо') : console.log('Не четное число');
