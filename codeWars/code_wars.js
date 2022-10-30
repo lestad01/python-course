@@ -646,3 +646,64 @@ let strSurName = firstStr2 + lastStr2;
 // В переменной number записано число. Необходимо с помощью console.log вывести сообщение, указывающее на чётность или нечётность числа.
 let number = 4;
 (number % 2 == 0) ? console.log('Чётное чилсо') : console.log('Не четное число');
+
+
+
+
+// Вам будет предоставлен массив чисел. 
+// Вы должны отсортировать нечетные числа в порядке возрастания, оставив четные числа на их исходных позициях.
+
+
+function sortArray(array) {
+  // Return a sorted array.
+
+  const odds = array.filter(item => item % 2).sort((a,b) => a- b);
+  console.log(odds); // созданный НОВЫЙ массив НЕ четных чисел
+  return array.map((item) => (item % 2) ? odds.shift() : item) // т.е. формируется новый массив с условием если элемент 
+                                                               //НЕ четныйб тогда из массива не четных чисел удаляется не четное число и возвращает его в результат т.е. в array
+}
+let arr = [ 2, 8, 6 ];
+
+console.log(sortArray(arr));
+
+
+// Напишите генератор массивов длиной count со случайными числами от n до m. 
+// Учтите, что n и m могут быть отрицательными, а также может быть n > m или n < m. Выведите результат с помощью console.log.
+
+let n = 0;
+let m = 90;
+let count = 60;
+let arr = [];
+
+// for (let q = n; q < count; q++){
+//   arr.push(Math.round(Math.random() * m));
+// }
+// arr.sort((a,b) => a - b);
+
+while (n < count){
+  n++;
+  arr.push(Math.round(Math.random() * m));
+}
+
+console.log(arr);
+
+
+// С помощью цикла создать перевёрнутый вариант произвольной строки. Например, строка «Привет, мир!» должна превратиться в «!рим ,тевирП».
+let str = 'Hello world!';
+let newStr = '';
+
+// for (let i = str.length - 1; i >= 0; i--){
+//   newStr += str[i];
+// }
+
+let i = str.length - 1;
+while (i >= 0){
+  --i;
+  newStr += str[i];
+}
+
+console.log(newStr);
+
+
+
+
