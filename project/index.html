@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ac-vo-invest</title>
+    <link rel="icon" type="image" href="img/png/logo_header.png">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-querries.css">
+</head>
+
+<body>
+    <div class="container-site">
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__content">
+                    <div class="header__left-part">
+                        <a href="index.html" class="header_link" tabindex="2">
+                            <img src="img/png/logo_header.png" tabindex="1"
+                                aria-label="Логотип художественной галлереи Blanchard" alt="Логотип"
+                                class="header__logo-img">
+                        </a>
+                    </div>
+                    <div class="header__middle-part">
+                        <nav class="header__nav">
+                            <li class="header__item">
+                                <a class="header__item-link" href="#privileges">
+                                    О долине
+                                </a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__item-link" href="#ecosystem">
+                                    Экосистема
+                                </a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__item-link" href="#location">
+                                    Расположение
+                                </a>
+                            </li>
+                            <li class="header__item">
+                                <a class="header__item-link" href="#cluster">
+                                    Кластеры
+                                </a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="header__right-part">
+                        <div class="header__right-part-block">
+                            <button data-modal class="header__right-part-link">
+                                <div></div>
+                                <span class="header__right-text">Стать резидентом</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- adaptive-nav max-width 800px start -->
+                    <div class="header__nav-adaptive-block-left">
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="5.5" cy="5.5" r="5.5" fill="#0063CD" />
+                        </svg>
+                    </div>
+                    <div class="header__nav-adaptive-block-middle">
+                        <img src="img/png/logotip.png" alt="Акселератор">
+                    </div>
+                    <div class="header__burger">
+                        <button class="header__burger-btn">
+                            <ul class="header__burger-list">
+                                <li class="header__burger-circle">
+                                </li>
+                                <li class="header__burger-circle">
+                                </li>
+                                <li class="header__burger-circle">
+                                </li>
+                            </ul>
+                        </button>
+                    </div>
+                    <!-- adaptive-nav max-width 800px end -->
+
+                    <!-- pull-out menu start -->
+                    <div class="header__pull-out-menu-block">
+                        <div class="header__pull-out-menu-dialog">
+                            <div class="header__pull-out-menu-content">
+                                <div class="header__top-content-wrapper">
+                                    <div class="header__top-content">
+                                        <div class="header__top-content-block-img">
+                                            <img src="img/png/logo-active.png" alt="Акселератор"
+                                                class="header__top-content-img">
+                                        </div>
+                                        <button class="header__top-content-burger">
+                                            <ul class="header__top-content-burger-list">
+                                                <li class="header__top-content-burger-circle">
+                                                </li>
+                                                <li class="header__top-content-burger-circle">
+                                                </li>
+                                                <li class="header__top-content-burger-circle">
+                                                </li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <ul class="header__bottom-content">
+                                        <li class="header__bottom-content-list">
+                                            <a href="https://ac-vo-front.vercel.app/"
+                                                class="header__bottom-content-link">
+                                                Главная
+                                            </a>
+                                        </li>
+                                        <li class="header__bottom-content-list">
+                                            <a href="https://ac-vo-front.vercel.app/portfolio"
+                                                class="header__bottom-content-link">
+                                                Портфель
+                                            </a>
+                                        </li>
+                                        <li class="header__bottom-content-list">
+                                            <a href="https://ac-vo-front.vercel.app/team"
+                                                class="header__bottom-content-link">
+                                                Команда
+                                            </a>
+                                        </li>
+                                        <li class="header__bottom-content-list">
+                                            <a href="https://ac-vo-front.vercel.app/news"
+                                                class="header__bottom-content-link">
+                                                Новости
+                                            </a>
+                                        </li>
+                                        <li class="header__bottom-content-list">
+                                            <a href="https://ac-vo-front.vercel.app/partners"
+                                                class="header__bottom-content-link">
+                                                Партнёры
+                                            </a>
+                                        </li>
+                                        <li class="header__bottom-content-list">
+                                            <a href="https://ac-vo-front.vercel.app/contacts"
+                                                class="header__bottom-content-link">
+                                                Контакты
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- pull-out menu end -->
+                </div>
+            </div>
+        </header>
+        <article class="article-banner">
+            <div class="article-banner__block container">
+                <div class="article-banner__block-left-part">
+                    <div class="article-banner__wrapper">
+                        <h1 class="article-banner__heading">
+                            ИНТЦ «Воробьевы горы»
+                        </h1>
+                        <p class="article-banner__text">
+                            Инновационная экосистема мирового уровня, создаваемая в целях реализации приоритетов
+                            научно-технологического развития России, повышения инвестиционной привлекательности сферы
+                            исследованийи разработок, коммерциализации их результатов, расширения доступа граждан и
+                            юридических лиц к участию в перспективных, коммерчески привлекательных научных и
+                            научно-технических проектах
+                        </p>
+                    </div>
+                </div>
+                <div class="article-banner__block-right-part">
+                    <img src="img/png/banner.png" class="article-banner__img-banner" alt="ИНТЦ 'Воробьёвы горы'">
+                </div>
+            </div>
+        </article>
+        <section id="privileges" class="privileges">
+            <div class="container section-privileges__container">
+                <h3 class="section_heading">
+                    Какие льготы вы получите, <br> став резидентом?
+                </h3>
+                <div class="section-privileges__wrapper">
+                    <div class="section-privileges__left">
+                        <div class="section-privileges__block">
+                            <div class="section-privileges_first-elem section-privileges__elem">Для участников</div>
+                            <div class="section-privileges_second-elem section-privileges__elem">Без преференций</div>
+                        </div>
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">Налог на прибыль</div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">0%</div>
+                                <div class="section-privileges__bot">20%</div>
+                            </div>
+                        </div>
+
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">Налог на имущество</div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">0%</div>
+                                <div class="section-privileges__bot">2,2%</div>
+                            </div>
+                        </div>
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">НДС</div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">0%</div>
+                                <div class="section-privileges__bot">20%</div>
+                            </div>
+                        </div>
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">Тарифы страховых взносов
+                            </div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">14%</div>
+                                <div class="section-privileges__bot">30%</div>
+                            </div>
+                        </div>
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">Таможенные пошлины</div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">0%</div>
+                                <div class="section-privileges__bot">До 54%</div>
+                            </div>
+                        </div>
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">Пошлины на ин. работников
+                            </div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">0 руб.</div>
+                                <div class="section-privileges__bot">В зависимости от вида пошлины</div>
+                            </div>
+                        </div>
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">Разрешение на привлечение
+                                иностранных работников</div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">Не требуется</div>
+                                <div class="section-privileges__bot">Требуется</div>
+                            </div>
+                        </div>
+                        <div class="section-privileges__hard-block">
+                            <div class="section-privileges__heading section-privileges__elem">Получение лицензии на
+                                медицинскую и образовательную деятельность</div>
+                            <div class="section-privileges__indoor-block">
+                                <div class="section-privileges__bot">Не требуется</div>
+                                <div class="section-privileges__bot">Требуется</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-privileges__right">
+                        <div class="section-privileges__right-wrapper">
+                            <div class="section-privileges__right-block">
+                                <span class="section-privileges_right-img section-privileges__right-svg-first"></span>
+                                <p class="section-privileges__right-text-block ">
+                                    Тесная и неразрывная связь Научной Долины с Московским университетом, возможность
+                                    реализации совместных научных и образовательных программ, участие в реализации
+                                    проектов студентов, аспирантов и сотрудников МГУ.
+                                </p>
+                            </div>
+                            <div class="section-privileges__right-block">
+                                <span class="section-privileges_right-img section-privileges__right-svg-second"></span>
+                                <p class="section-privileges__right-text-block">
+                                    Место расположения в непосредственной близости от центра Москвы, транспортная
+                                    доступность.
+                                </p>
+                            </div>
+                            <div class="section-privileges__right-block">
+                                <span class="section-privileges_right-img section-privileges__right-svg-third"></span>
+                                <p class="section-privileges__right-text-block">
+                                    Возможность непосредственного участия в создании объектов инфраструктуры ИНТЦ.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-privileges__right-adaptive">
+                        <div class="swiper swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-priv">
+                                    <span class="section-privileges_right-img swiper-slide-svg-first"></span>
+                                    <p class="section-privileges__right-text-block ">
+                                        Тесная и неразрывная связь Научной Долины с Московским университетом, возможность
+                                        реализации совместных научных и образовательных программ, участие в реализации
+                                        проектов студентов, аспирантов и сотрудников МГУ.
+                                    </p>
+                                </div>
+                                <div class="swiper-slide swiper-slide-priv">
+                                    <span class="section-privileges_right-img swiper-slide-svg-second"></span>
+                                    <p class="section-privileges__right-text-block ">
+                                        Место расположения в непосредственной близости от центра Москвы, транспортная
+                                        доступность.
+                                    </p>
+                                </div>
+                                <div class="swiper-slide swiper-slide-priv">
+                                    <span class="section-privileges_right-img swiper-slide-svg-third"></span>
+                                    <p class="section-privileges__right-text-block ">
+                                        Возможность непосредственного участия в создании объектов инфраструктуры ИНТЦ.
+                                    </p>
+                                </div>
+                            </div>
+                          <div class="swiper-paginat" aria-label="Переключатель слайда"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   
+        <section id="ecosystem" class="ecosystem">
+            <div class="container section-ecosystem__container">
+                <h3 class="section_heading section_heading-2">
+                    Что вам даст экосистема долины?
+                </h3>
+                <div class="section-ecosystem__wrapper">
+                    <div class="section-ecosystem__card">
+                        <p class="section-ecosystem__text text-card_1">
+                            8 тематических кластеров, ориентированных на приоритетные научные направления.
+                        </p>
+                    </div>
+                    <div class="section-ecosystem__card">
+                        <p class="section-ecosystem__text text-card_2">
+                            Комплекс лабораторий МГУ им. М. В. Ломоносова, доступных для резидентов.
+                        </p>
+                    </div>
+                    <div class="section-ecosystem__card">
+                        <p class="section-ecosystem__text text-card_3">
+                            Научная экспертиза от профессорского состава университета.
+                        </p>
+                    </div>
+                    <div class="section-ecosystem__card">
+                        <p class="section-ecosystem__text text-card_4">
+                            Инфраструктура и оборудование для пилотирования научных решений на базе ИНТЦ.
+                        </p>
+                    </div>
+                    <div class="section-ecosystem__card">
+                        <p class="section-ecosystem__text text-card_5">
+                            Высококвалифицированные консалтинговые услуги.
+                        </p>
+                    </div>
+                    <div class="section-ecosystem__card">
+                        <p class="section-ecosystem__text text-card_6">
+                            Возможность внедрения технологических решений в систему вашей компании.
+                        </p>
+                    </div>
+                    <div class="section-ecosystem__card">
+                        <p class="section-ecosystem__text text-card_7">
+                            Широкая инфраструктура для осуществления вами инвестиционной деятельности в инновационные
+                            проекты на ранней стадии.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="location" class="location">
+            <div class="container section-location__container">
+                <h3 class="section_heading">
+                    Расположение долины
+                </h3>
+                <div class="yandex-map">
+                    <div id="map">
+                    </div>
+                    <div class="section-location__yandex-menu">
+                        <h3 class="section-location__yandex-menu-heading">
+                            Территория ИНТЦ МГУ
+                        </h3>
+                        <div class="section-location__yandex-menu-text">
+                            4 ст. метро в шаговой доступности
+                        </div>
+                        <div class="section-location__yandex-menu-text">
+                            25 минут до Кремля
+                        </div>
+                        <div class="section-location__yandex-menu-text">
+                            15 минут до Сити
+                        </div>
+                        <div class="section-location__yandex-menu-text">
+                            6 км до Садового кольца
+                        </div>
+                        <div class="section-location__yandex-menu-text">
+                            4 км до ТТК
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="cluster" class="cluster">
+            <div class="container section-cluster__container">
+                <h3 class="section_heading">
+                    Кластеры ИНТЦ
+                </h3>
+                <div class="section-cluster__wrapper">
+                    <div class="section-cluster__block section-cluster_img-1">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Междисплинарный»
+                            </h3>
+                            <ul class="section-cluster__menu">
+                                <li class="section-cluster__list">
+                                    Междисциплинарные гуманитарные исследования и когнитивные науки;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Спорт, инновационные спортивные технологии;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Технологии искусственного интеллекта.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-cluster__block section-cluster_img-2">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Образовательный»
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="section-cluster__block section-cluster_img-3">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Биомед»
+                            </h3>
+                            <ul class="section-cluster__menu">
+                                <li class="section-cluster__list">
+                                    Биомедицина;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Фармацевтика;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Медико-биологические исследования.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-cluster__block section-cluster_img-4">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Нанотех»
+                            </h3>
+                            <ul class="section-cluster__menu">
+                                <li class="section-cluster__list">
+                                    Нанотехнологии исследования новых материалов;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Наномашиностроение.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-cluster__block section-cluster_img-5 ">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Геотех»
+                            </h3>
+                            <ul class="section-cluster__menu">
+                                <li class="section-cluster__list">
+                                    Междисциплинарные гуманитарные исследования и когнитивные науки;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Спорт, инновационные спортивные технологии;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Технологии искусственного интеллекта.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-cluster__block section-cluster_img-6">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Инфотех»
+                            </h3>
+                            <ul class="section-cluster__menu">
+                                <li class="section-cluster__list">
+                                    Междисциплинарные гуманитарные исследования и когнитивные науки;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Спорт, инновационные спортивные технологии;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Технологии искусственного интеллекта.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-cluster__block section-cluster_img-7">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Инжиниринг»
+                            </h3>
+                            <ul class="section-cluster__menu">
+                                <li class="section-cluster__list">
+                                    Робототехника, технологии специального назначения и машинного инжиниринга,
+                                    энергосбережение
+                                </li>
+                                <li class="section-cluster__list">
+                                    Эффективное хранение энергии.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-cluster__block section-cluster_img-8">
+                        <div class="section-cluster__inside-block">
+                            <h3 class="section-cluster__heading">
+                                «Космос»
+                            </h3>
+                            <ul class="section-cluster__menu">
+                                <li class="section-cluster__list">
+                                    Междисциплинарные гуманитарные исследования и когнитивные науки;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Спорт, инновационные спортивные технологии;
+                                </li>
+                                <li class="section-cluster__list">
+                                    Технологии искусственного интеллекта.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="section__cluster-main-block">
+                    <!-- Основной свайпер -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper swiper-block-cluster">
+                            <div class="swiper-slide section-cluster__slider-block">
+                                    <img class="section-cluster_slide-img" src="img/png/Slider_img_1.png" alt="">
+                                    <img class="section-cluster_slide-img" src="img/png/Slider_img_2.png" alt="">
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <!-- Основной свайпер -->
+
+                    <!-- Адаптивный свайпер -->
+                    <div class="swiper-cluster-adaptive swiper-container">
+                        <div class="swiper-wrapper swiper-block-cluster-adaptive">
+                            <div class="swiper-slide section-cluster__slider-block-adaptive">
+                                    <img class="section-cluster_slide-img-adaptive" src="img/png/Slider_img_1.png" alt="">                                  
+                            </div>
+                            <div class="swiper-slide section-cluster__slider-block-adaptive">
+                                    <img class="section-cluster_slide-img-adaptive" src="img/png/Slider_img_2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-paginator-adaptive" aria-label="Переключатель слайда"></div>
+                    </div>
+                    <!-- Адаптивный свайпер -->
+                </div>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container section-features__container">
+                <h2 class="section_heading">
+                    Чем поможет Акселератор Возможностей <br> в рамках экосистемы?
+                </h2>
+                <div class="section-features__wrapper">
+                    <div class="section-features__block">
+                        <h2 class="section-features__heading">
+                            Начинающему бизнесу:
+                        </h2>
+                        <ul class="section-features__menu">
+                            <li class="section-features__list">
+                                содействуем при регистрации патента на ваши разработки
+                            </li>
+                            <li class="section-features__list">
+                                осуществляем финансовый и инвестиционный консалтинг
+                            </li>
+                            <li class="section-features__list">
+                                помогаем в привлечении инвестиций
+                            </li>
+                            <li class="section-features__list">
+                                способствуем в получении новых заказчиков, B2B\B2G-контрактов
+                            </li>
+                            <li class="section-features__list">
+                                обеспечиваем дополнительное PR-освещение
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="section-features__block">
+                        <h2 class="section-features__heading">
+                            Технологическим корпорациям:
+                        </h2>
+                        <ul class="section-features__menu">
+                            <li class="section-features__list">
+                                содействуем в поиске и внедрении инновационных технологических решений
+                            </li>
+                            <li class="section-features__list">
+                                организовываем и проводим корпоративные инвестиционные программы (хакатоны, воронки
+                                стартапов, акселерационные программы)
+                            </li>
+                            <li class="section-features__list">
+                                осуществляем процесс рекрутинга необходимых IT-специалистов и кандидатов на стажировки
+                            </li>
+                            <li class="section-features__list">
+                                участвуем в разработках партнерских программ и коллабораций
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section-features__description">
+                    <h1 class="section-features__description-heading">
+                        По сравнению со сторонними компаниями, резиденты долины имеют <br> повышенный приоритет в
+                        реализации совместных проектов
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <section class="application-resident">
+            <div class="container section-application-resident__container">
+                <div class="section-application-resident__wrapper">
+                    <div class="section-application-resident__left-block">
+                        <h2 class="section-application-resident__heading">
+                            Как стать резидентом?
+                        </h2>
+                        <ol class="section-application-resident__menu">
+                            <li class="section-application-resident__list">
+                                Подайте заявку на резиденство:
+                            </li>
+                            <li class="section-application-resident__list">
+                                1. На основании заявки получите экспертизу о соответствии вашей компании
+                                инновационно-научной деятельности
+                            </li>
+                            <li class="section-application-resident__list">
+                                2. Релоцируйте постоянно действующий исполнительный орган вашей компании на территорию
+                                ИНТЦ
+                            </li>
+                            <li class="section-application-resident__list">
+                                3. Заключите договор аренды с Управляющей компанией ИНТЦ «Воробьевы горы», получите
+                                доступ к колоссальным ресурсам его экосистемы и откройте новые горизонты для развития
+                                вашего бизнеса
+                            </li>
+                        </ol>
+
+                    </div>
+                    <div class="section-application-resident__right-block">
+                        <button data-modal class="section-application-resident__right-btn">
+                            <h2 class="section-application-resident__heading-btn">
+                                Подать заявку
+                            </h2>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Модальное окно 'Стать резидентом' modal-resident-->
+        <div class="modal">
+            <div class="modal-resident__dialog">
+                <div class="modal-resident__content">
+                    <form class="modal__form" action="#">
+                        <span data-close class="modal-resident__close"></span>
+                        <div class="modal-resident__block-for-btn">
+                            <div class="modal-resident__btn header__right-part-block">
+                                <button type="submit" class="modal-resident__btn-link header__right-part-link">
+                                    <div></div>
+                                    <span class="modal-resident__btn-text header__right-text">Отправить</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal-resident__left-part">
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg class="modal-svg-error" width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z"
+                                            fill="#FF4141" />
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3" />
+                                    </svg>
+                                    <span class="modal-resident__error-text">
+                                        Обязательное поле
+                                    </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    Название организации
+                                </label>
+                            </div>
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg class="modal-svg-error" width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z"
+                                            fill="#FF4141" />
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3" />
+                                    </svg>
+                                    <span class="modal-resident__error-text">
+                                        Обязательное поле
+                                    </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    ФИО контактного лица
+                                </label>
+                            </div>
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg class="modal-svg-error" width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z"
+                                            fill="#FF4141" />
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3" />
+                                    </svg>
+                                    <span class="modal-resident__error-text">
+                                        Обязательное поле
+                                    </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    Сфера
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-resident__right-part">
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg class="modal-svg-error" width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z"
+                                            fill="#FF4141" />
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3" />
+                                    </svg>
+                                    <span class="modal-resident__error-text">
+                                        Обязательное поле
+                                    </span>
+                                </div>
+                                <input type="text" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    ИНН компании
+                                </label>
+                            </div>
+                            <div class="modal-resident__part-box">
+                                <div class="modal-resident__part-error">
+                                    <svg class="modal-svg-error" width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.1765 5.87997V10.776L12.0485 13.624H10.9605L10.8165 10.776V5.87997H12.1765ZM11.6805 15.112C11.8618 15.112 11.9898 15.1493 12.0645 15.224C12.1498 15.2986 12.1925 15.432 12.1925 15.624V16.488C12.1925 16.68 12.1498 16.8133 12.0645 16.888C11.9898 16.9626 11.8618 17 11.6805 17H11.3285C11.1472 17 11.0192 16.9626 10.9445 16.888C10.8698 16.8133 10.8325 16.68 10.8325 16.488V15.624C10.8325 15.432 10.8698 15.2986 10.9445 15.224C11.0192 15.1493 11.1472 15.112 11.3285 15.112H11.6805Z"
+                                            fill="#FF4141" />
+                                        <circle cx="11.5" cy="11.5" r="11.35" stroke="#FF4141" stroke-width="0.3" />
+                                    </svg>
+                                    <span class="modal-resident__error-text">
+                                        Обязательное поле
+                                    </span>
+                                </div>
+                                <input name="phone" class="modal-resident__input">
+                                <label class="modal-resident__title-text">
+                                    Контактный номер
+                                </label>
+
+                            </div>
+                        </div>
+                        <label class="modal-resident__checkbox-option">
+                            <input class="modal-resident__checkbox-input" type="checkbox">
+                            <span class="modal-resident__new-check"></span>
+                            Даю согласие на обработку  <a download target="_blank" rel="noopener noreferrer"
+                                href="doc/Политика_в_отношении_обработки_персональных_данных.docx"
+                                style="text-decoration: underline;" class="modal-resident__checkbox-text"> персональных
+                                данных</a>
+                        </label>
+                    </form>
+                    <!-- <label class="modal-resident__checkbox-option">
+                        <input class="modal-resident__checkbox-input" type="checkbox" required>
+                        <span class="modal-resident__new-check" required></span>
+                        Даю согласие на обработку  <a download target="_blank" rel="noopener noreferrer"
+                            href="doc/Политика_в_отношении_обработки_персональных_данных.docx"
+                            style="text-decoration: underline;" class="modal-resident__checkbox-text"> персональных
+                            данных</a>
+                    </label> -->
+                </div>
+            </div>
+        </div>
+        <!-- Модальное окно 'Стать резидентом' -->
+    </div>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=0673974a-7272-4323-acb6-97d2e00e90c7&lang=ru_RU" type="text/javascript"></script>
+    <script defer src="js/main-js.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+/* Шрифты start */
+@font-face {
+    font-family: 'Raleway';
+    src: url('../font/ralewayLight.woff') format('woff'),
+         url('../font/ralewayLight.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }    
+  @font-face {
+    font-family: 'Raleway';
+    src: url('../font/ralewayregular.woff'),
+         url('../font/ralewayregular.woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Raleway';
+    src: url('../font/ralewayBold.woff') format('woff'),
+         url('..font/ralewayBold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+      font-family: 'Exo 2';
+      src: url('../font/Exo2-Light.woff') format('woff'),
+           url('../font/Exo2-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-display: swap;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'Exo 2';
+      src: url('../font/Exo2-Regular.woff') format('woff'),
+           url('../font/Exo2-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-display: swap;
+      font-style: normal;
+  }
+  @font-face {
+    font-family: 'Exo 2';
+    src: url('../font/Exo2-Bold.woff') format('woff'),
+         url('../font/Exo2-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+  /* Шрифты end */
+
+
+
+
+

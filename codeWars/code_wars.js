@@ -748,3 +748,184 @@ for (let num of numMonth){
   console.log(`${num} января, ${days[ind]}`);
 }
 
+
+// Ребенок играет с мячом на n-м этаже высокого здания. Высота этого этажа, h, известна.
+// Он бросает мяч из окна. Мяч отскакивает (например) до двух третей его высоты (отскок 0,66).
+// Его мать смотрит в окно на 1,5 метра от земли.
+// Сколько раз мать будет видеть, как мяч проходит перед ее окном (в том числе, когда он падает и подпрыгивает?
+// Три условия должны быть выполнены для действительного эксперимента:
+
+// Параметр с плавающей запятой "h" в метрах должен быть больше 0
+// Параметр с плавающей точкой "bounce" должен быть больше 0 и меньше 1
+// Параметр "window" должен быть меньше h.
+// Если все три вышеуказанных условия выполнены, вернуть положительное целое число, в противном случае вернуть -1.
+
+function bouncingBall(h, bounce, window) {
+  let ct = 1;
+  if(h > 0 && window < h && bounce > 0 && bounce < 1){
+  while(bounce*h > window){ //Шар может быть виден только в том случае, если высота отскакивающего шара больше, чем параметр окна.
+    ct+=2;
+    h*=bounce;  
+    console.log(h);
+  }
+    return ct;
+  } else {
+    return -1;
+  }
+}
+
+
+function bouncingBall(h,  bounce,  window) {
+  if(h <= 0 || bounce <= 0 || bounce >= 1 || window >= h){
+    return -1;
+  }
+
+  let newHeight = h * bounce;
+  return bouncingBall(newHeight, bounce, window) + 2;
+}
+
+
+  //console.log(bouncingBall(3.0, 0.66, 1.5)); //3
+  console.log(bouncingBall(5.0, 0.66, 1.5)); //15
+
+
+  // Ваши одноклассники попросили вас скопировать для них некоторые документы. Вы знаете, что есть "n" одноклассников, а в документах есть "m" страниц.
+
+  // Ваша задача - подсчитать, сколько пустых страниц вам нужно. Если n < 0или m < 0вернуть 0.
+
+
+  function paperwork(n, m) {
+    if (n > 0 && m > 0){
+      return n * m
+    } else {
+      return 0
+    }
+  }
+
+
+
+  // Учитывая массив (arr) в качестве аргумента, завершите функциюcountSmileys, которая должна вернуть общее количество улыбающихся лиц.
+
+  // Правила для улыбающегося лица:
+  
+  // Каждый смайлик должен содержать допустимую пару глаз. Глаза могут быть помечены как :или ;
+  // У смайлика может быть нос, но это необязательно. Допустимыми символами для носа являются -или ~
+  // У каждого улыбающегося лица должен быть улыбающийся рот, который должен быть отмечен либо )или D
+  // Никакие дополнительные символы не допускаются, кроме упомянутых.
+  
+  // Допустимые примеры смайликов: :) :D ;-D :~)
+  // Недопустимые смайлики: ;( :> :} :]
+
+  function countSmileys(smileys) {
+    let firstStep = smileyHasValidEye;
+    return smileys.filter(smiley => {
+      let state = firstStep;
+      for (let s of [...smiley]) {
+        state = state(s);
+        if (typeof state !== 'function') return state;
+      }
+    }).length;
+  }
+  
+  function smileyHasValidEye(s) {
+    if (s === ':' || s === ';') {
+      return smileyHasValidNose;
+    }
+    return smileyHasValidEye;
+  }
+  
+  function smileyHasValidNose(s) {
+    if (s === '-' || s === '~') {
+      return smileyHasValidMouth;
+    }
+    return smileyHasValidMouth(s);
+  }
+  
+  function smileyHasValidMouth(s) {
+    if (s === ')' || s === 'D') {
+      return true;
+    }
+    return false;
+  }
+
+
+
+  function countSmileys(arr) {
+    let smileys = 0;
+    let validSmileys = [":D", ";D", ":)", ";)", ":-D", ";-D", ":-)", ";-)", ":~D", ";~D", ":~)", ";~)"];
+    for (let i = 0; i < arr.length; i++) {
+      if (validSmileys.includes(arr[i])) {
+        smileys++;
+      }
+    }
+    return smileys;
+  }
+  
+  console.log(countSmileys([':~(', ':>', ':D', ':(', ':o>', ':)']));
+
+
+  // Основная идея состоит в том, чтобы подсчитать все встречающиеся символы в строке. Если у вас есть строка like aba, то результат должен быть {'a': 2, 'b': 1}таким .
+
+  // Что делать, если строка пуста? Тогда результатом должен быть пустой литерал объекта, {}.
+
+  function count (string) {  
+    // The function code should be here
+    let result = {};
+    let length = string.length;
+
+    for (let i = 0; i < length; i++) {
+      const char = string[i];
+      if ((!result[char])) result[char] = 0;
+      result[char]++;
+    }
+    return result;
+    //  return {};
+  }
+  console.log(count('abac'));
+
+
+
+// Ваша задача - отсортировать заданную строку. Каждое слово в строке будет содержать одно число. Это число - позиция, которую должно занимать слово в результате.
+
+// Примечание: числа могут быть от 1 до 9. Таким образом, 1 будет первым словом (а не 0).
+
+// Если входная строка пуста, верните пустую строку. Слова во входной строке будут содержать только действительные последовательные числа.
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+let str = "4of Fo1r people g3ood th5e the2";
+
+// function order(words){
+//   // ...
+//   if (words === ''){
+//     return ''
+//   }
+//   let newArr = words.split(' ');
+//   const mainArr = newArr.sort((a,b) => a.match(/[1-9]/gi) - b.match(/[1-9]/gi));
+//   const result = mainArr.join(' ');
+//   return result;
+
+// }
+
+
+function order(words){
+  let array = words.split(' ');
+  let newArrSorted = [];
+  for (let i = 0; i <= array.length; i++){
+    console.log(array[i])
+    for (let j = 0; j < array.length; j++){
+      if (array[j].indexOf(i) >= 0){
+        newArrSorted.push(array[j]);
+        console.log(newArrSorted);
+      }
+    }
+  }
+  return newArrSorted.join(' ');
+}
+
+
+console.log(order(str))
+
+
+
+
