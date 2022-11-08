@@ -929,3 +929,156 @@ console.log(order(str))
 
 
 
+// Число 89- это первое целое число, состоящее более чем из одной цифры, которое удовлетворяет свойству, частично представленному в названии этого ката. Какой смысл говорить "Эврика"? 
+// Потому что эта сумма дает одно и то же число.
+
+// В действительности: 89 = 8^1 + 9^2
+
+// Следующим номером в обладании этим свойством является 135.
+
+// Посмотрите на это свойство еще раз: 135 = 1^1 + 3^2 + 5^3
+
+// Нам нужна функция для сбора этих чисел, которая может принимать два целых aчисла, bкоторая определяет диапазон [a, b](включительно) и 
+// выводит список отсортированных чисел в диапазоне, который удовлетворяет описанному выше свойству.
+
+
+const EUREKAS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 89,135, 175, 518, 598, 1306, 1676, 2427, 2646798];
+
+// const sumDigPow = (a, b) => EUREKAS.filter( (n) => a <= n && n <= b );
+
+
+function sumDigPow(a, b) {
+  let arr = [];
+  for (let i = a; i <= b; i++) {
+    let sum = 0;
+    //console.log(i);
+    for (let j = 0; j <= String(i).length; j++) {
+      console.log(String(i)[j]);
+      sum += Math.pow(parseInt(String(i)[j]), j+1); 
+
+      if (sum == i) arr.push(i);
+    }
+  }
+  return arr;
+}
+console.log(sumDigPow(1,10))
+
+
+// В небольшом городе численность населения составляет p0 = 1000начало года. 
+// Население регулярно увеличивается 2 percentна год, и, кроме 50того, в город ежегодно приезжают новые жители. 
+// Сколько лет нужно городу, чтобы его население увеличилось или сравнялось с p = 1200жителями?
+
+function nbYear(p0, percent, aug, p1) {
+  let years = 0;
+  for (years = 0; p0 < p1; years++) {
+    p0 = Math.floor(p0 + p0 * percent / 100 + aug);
+  }
+  return years
+}
+// 1 1080
+// 2 1162,4
+// 3 1247,272
+// 4 1 334,69016
+// 5 
+console.log(nbYear(1000, 3, 50, 1400))
+
+
+// Кто помнит свое время на школьном дворе, когда девочки брали цветок и рвали его лепестки, произнося 
+// каждую из следующих фраз каждый раз, когда срывался лепесток:
+
+// "Я люблю тебя"
+// "немного"
+// "очень"
+// "страстно"
+// "безумно"
+// "вовсе нет"
+// Если лепестков больше 6, вы начинаете сначала с "I love you"7 лепестков, "a little"с 8 лепестков и так далее.
+
+// Когда был сорван последний лепесток, раздались крики волнения, мечтаний, нахлынувших мыслей и эмоций.
+
+// Ваша цель в этом ката - определить, какую фразу девушки произнесли бы на последнем лепестке для цветка с заданным количеством лепестков. 
+// Количество лепестков всегда больше 0.
+
+
+function howMuchILoveYou(nbPetals) {
+  let petalSaying = ["I love you", "A little", "A lot", "Passionately", "Madly", "Not at all"];
+  let index = (nbPetals - 1) % petalSaying.length;
+  // console.log(petalSaying.length)
+  // console.log(index);
+  return petalSaying[index];
+}
+
+const phrases = [
+  'I love you',
+  'a little',
+  'a lot',
+  'passionately',
+  'madly',
+  'not at all',
+]
+
+function howMuchILoveYou(n) {
+   return phrases[(n - 1) % phrases.length] 
+}
+
+
+console.log(howMuchILoveYou(6))
+
+// Записать номер в развернутом виде
+// Вам будет присвоен номер, и вам нужно будет вернуть его в виде строки в развернутом виде.
+function expandedForm(num){
+  const array = num.toString().split('');
+
+  for (let n = 0; n < array.length - 1; ++n){ 
+    if (array[n] > 0){
+      console.log(n);
+      for (let j = n; j < array.length - 1; ++j) { // array.length - 1 - это означает что последнюю итерацию считывать не надо
+        array[n] += '0';
+      }
+    }
+  }
+  return array.join().replace(new RegExp(",0", "g"), "").replace(new RegExp(",", "g"), " + ");
+}
+
+
+console.log(expandedForm(1234))
+
+
+
+// Существует массив с некоторыми числами. Все числа равны, за исключением одного. 
+// Попробуй найти его!
+
+function findUnique(arr) {
+  return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n) );
+}
+
+
+console.log(findUnique([ 1, 2, 2, 2, 2]))
+
+
+
+
+// Существует массив строк. Все строки содержат одинаковые буквы, кроме одной. 
+// Попробуй найти его!
+function findUniq(arr) {
+  // do magic
+  return arr.find(q => arr.q)
+}
+
+
+function findUniq(arr) {
+  return arr.sort().filter((e, i, a) => e.match(new RegExp(`[^${a[1]}]`, 'gi')))[0]
+}
+
+// Существует массив. Все элементы одинаковы, за исключением одного. 
+// Попробуй найти его!
+
+
+function findUniq(a) {
+  for (var b = 0; b < a.length; b++)
+    if (a[b] !== a[0]) return !1;
+  return !0
+};
+
+
+console.log(findUniq([ 'w', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a', 2 ]));
