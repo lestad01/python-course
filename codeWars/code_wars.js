@@ -1082,3 +1082,51 @@ function findUniq(a) {
 
 
 console.log(findUniq([ 'w', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a', 2 ]));
+
+
+
+function wave(str){
+  return Array.from(str, (c,i) => 
+  c === ' ' ? '' :
+  `${str.substring(0, i)}${c.toUpperCase()}${str.substring(i + 1)}`
+  ).filter(c => c);
+}
+
+
+function wave(str){
+  let newArr = [];
+  for (let i = 0; i < str.length; i++) {
+    let copy = str.split('');
+    if(copy[i] !== ' ') {
+    copy[i] = copy[i].toUpperCase()
+    newArr.push(copy.join(''))
+    }
+  }
+  return newArr
+}
+
+
+console.log(wave('hello'));
+
+
+// императивный стиль 
+function onlyOdd(array){
+  let result = []
+  for (let part of array){
+    if (part % 2 !== 0) {
+      result.push(part);
+    }
+  }
+  return result;
+}
+//декларативный
+function onlyOdd(array){
+  return array.filter((element) => element % 2 !== 0);
+}
+console.log(onlyOdd([1,2,3,4]))
+
+
+
+
+
+
