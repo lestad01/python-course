@@ -593,4 +593,62 @@ function oddOrEven(array) {
 console.log(oddOrEven([4]))
 
 
+//Учитывая целое число, определите, является ли оно квадратным числом:
+
+//В математике квадратное число или идеальный квадрат - это целое число, которое является квадратом целого числа; 
+//другими словами, это произведение некоторого целого числа на себя.
+var isSquare = function(n){
+  let result = Math.sqrt(n);
+  return (result % 1 === 0);
+}
+console.log(isSquare(25))
+
+
+//Учитывая массив целых чисел, найдите тот, который появляется нечетное количество раз.
+
+//Всегда будет только одно целое число, которое появляется нечетное количество раз.
+
+function findOdd(arr) {
+  let result, num = 0;
+
+  arr = arr.sort();
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i+1]) {
+      num++;
+    } else {
+      num++;
+      if (num % 2 != 0) {
+        result = arr[i];
+        break;
+      }
+    }
+  }
+  return result;
+}
+console.log(findOdd([1,1,2,2,6]))
+
+
+// Добро пожаловать.
+// В этом ката от вас требуется, получив строку, заменить каждую букву на ее позицию в алфавите.
+// Если что-либо в тексте не является буквой, проигнорируйте это и не возвращайте.
+// "a" = 1, "b" = 2, и т.д.
+
+
+function alphabetPosition(text) {
+  let result = [];
+  let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+    "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
+    "w", "x", "y", "z"]
+
+  
+  text = text.replace(/\W*\d+/g, '').toLowerCase().split('');
+  for (let i = 0; i < text.length; i++) {
+    let j = alphabet.indexOf(text[i]) + 1;
+    if (j) result.push(j);
+  }
+  return result.join(' ');
+
+}
+
+console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 
