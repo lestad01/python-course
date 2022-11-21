@@ -652,3 +652,539 @@ function alphabetPosition(text) {
 
 console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 
+
+// В переменную password запишите строку с любым произвольным паролем. Проверьте надёжность пароля с помощью условного оператора if. 
+// Пароль является надёжным, когда в нём есть хотя бы четыре символа, один из которых — это дефис или нижнее подчёркивание. 
+// Выведите в консоль сообщения «Пароль надёжный» или «Пароль недостаточно надёжный».
+
+
+const password = 'qazz-';
+
+// if (password.length > 4 && password.length === '_' || password.length === '-'){
+//   console.log('Correct password!')
+// } else {
+//   console.log('Invalid password!')
+// }
+
+//Варианот с оператором indexOff  и тернарным оператором
+((password.indexOf('_') || password.indexOf('-')) && password.length > 4) ? console.log('Correct password!') : console.log('Invalid password!');
+
+// В переменных userName, userSurname даны имя и фамилия пользователя. При этом в строках беспорядок с большими и маленькими буквами, и нужно оформить строки единообразно. 
+// Для этого первые буквы имени и фамилии приведите к верхнему регистру (большие буквы), а оставшиеся — к нижнему (маленькие буквы). 
+// Запишите результат в новые переменные и выведите их значения с помощью console.log. С помощью тернарных операторов и console.log выведите сообщение «Имя было преобразовано» или 
+// «Имя осталось без изменений» для имени и фамилии в зависимости от того, были ли исходные строки равны преобразованным.
+
+
+let name = 'Alex';
+let surName = 'Chernov';
+let firstStr1 = name.substring(0,1).toUpperCase();
+let firstStr2 = surName.substring(0,1).toUpperCase();
+
+let lastStr1 = name.substring(1).toLowerCase();
+let lastStr2 = surName.substring(1).toLowerCase();
+
+let strName = firstStr1 + lastStr1;
+let strSurName = firstStr2 + lastStr2;
+
+
+
+// if (name[0] != firstStr1 && surName[0] != firstStr2){
+//   strName += firstStr1 + lastStr1;
+//   strSurName += firstStr2 + lastStr2;
+//   console.log(`Имя ${strName} и фамилия ${strSurName} были преобразованы `);
+// } else {
+//   console.log('Имя и фамилия остались без изменений');
+// }
+
+
+(name[0] != firstStr1 && surName[0] != firstStr2) ? console.log(`Имя ${strName} и фамилия ${strSurName} были преобразованы `) : console.log('Имя и фамилия остались без изменений');
+
+
+
+// В переменной number записано число. Необходимо с помощью console.log вывести сообщение, указывающее на чётность или нечётность числа.
+let number = 4;
+(number % 2 == 0) ? console.log('Чётное чилсо') : console.log('Не четное число');
+
+
+
+
+// Вам будет предоставлен массив чисел. 
+// Вы должны отсортировать нечетные числа в порядке возрастания, оставив четные числа на их исходных позициях.
+
+
+function sortArray(array) {
+  // Return a sorted array.
+
+  const odds = array.filter(item => item % 2).sort((a,b) => a- b);
+  console.log(odds); // созданный НОВЫЙ массив НЕ четных чисел
+  return array.map((item) => (item % 2) ? odds.shift() : item) // т.е. формируется новый массив с условием если элемент 
+                                                               //НЕ четныйб тогда из массива не четных чисел удаляется не четное число и возвращает его в результат т.е. в array
+}
+let arr = [ 2, 8, 6 ];
+
+console.log(sortArray(arr));
+
+
+// Напишите генератор массивов длиной count со случайными числами от n до m. 
+// Учтите, что n и m могут быть отрицательными, а также может быть n > m или n < m. Выведите результат с помощью console.log.
+
+let n = 0;
+let m = 90;
+let count = 60;
+let arr = [];
+
+// for (let q = n; q < count; q++){
+//   arr.push(Math.round(Math.random() * m));
+// }
+// arr.sort((a,b) => a - b);
+
+while (n < count){
+  n++;
+  arr.push(Math.round(Math.random() * m));
+}
+
+console.log(arr);
+
+
+// С помощью цикла создать перевёрнутый вариант произвольной строки. Например, строка «Привет, мир!» должна превратиться в «!рим ,тевирП».
+let str = 'Hello world!';
+let newStr = '';
+
+// for (let i = str.length - 1; i >= 0; i--){
+//   newStr += str[i];
+// }
+
+let i = str.length - 1;
+while (i >= 0){
+  --i;
+  newStr += str[i];
+}
+
+console.log(newStr);
+
+
+// Танк едет по дороге, на которой могут быть противотанковые мины. Дорога должна быть представлена в виде массива roadMines из 10 boolean-элементов. Если элемент равен true, то это мина. 
+// Движение танка должно быть представлено как цикл, в котором одна итерация — продвижение танка на следующий участок дороги (следующий элемент массива). 
+// При передвижении выводить в консоль сообщение «танк переместился на ${position}», где position — номер ячейки + 1. Если танк попал на мину, то нужно вывести сообщение «танк повреждён», 
+// если это 1-й взрыв, и «танк уничтожен», если это 2-й взрыв. После 2-го взрыва танк считается уничтоженным и прекращает движение.
+
+const roadMines = [true, true, false, true, true, true, true, true, true, false];
+let damage = 2;
+
+for (let i = 0; i < roadMines.length; i++){
+  let position = i + 1;
+  if (roadMines[i] === true){
+    console.log(`Танк переместился на ${position}`);
+  } else if (damage > 1){
+    damage--;
+    console.log(`Танк повреждён на ${position}`)
+  } else {
+    damage--;
+    console.log(`Танк уничтожен на ${position}`);
+    break;
+  }
+}
+
+
+// Сгенерировать массив чисел 1–31 включительно (числа месяца). Вывести с помощью console.log для каждого из чисел строку ${число} января, ${день недели}. 
+// День недели 1 января должен задаваться с помощью переменной, то есть программа должна корректно работать для любого дня недели, с которого начинается месяц. 
+// Подсказка 1: для дней недели можно создать массив с названиями дней, чтобы обращаться к нему по индексу. 
+// Подсказка 2: индекс дня недели можно вычислить с помощью операции остатка от деления.
+
+
+
+let numMonth = [];
+let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+let day = 'Четверг';
+let indexOfWeek = days.indexOf(day);
+
+for (k = 1; k < 32; k++){
+  numMonth.push(k);
+}
+for (let num of numMonth){
+  let ind = (indexOfWeek + num - 1) % 7
+  console.log(`${num} января, ${days[ind]}`);
+}
+
+
+// Ребенок играет с мячом на n-м этаже высокого здания. Высота этого этажа, h, известна.
+// Он бросает мяч из окна. Мяч отскакивает (например) до двух третей его высоты (отскок 0,66).
+// Его мать смотрит в окно на 1,5 метра от земли.
+// Сколько раз мать будет видеть, как мяч проходит перед ее окном (в том числе, когда он падает и подпрыгивает?
+// Три условия должны быть выполнены для действительного эксперимента:
+
+// Параметр с плавающей запятой "h" в метрах должен быть больше 0
+// Параметр с плавающей точкой "bounce" должен быть больше 0 и меньше 1
+// Параметр "window" должен быть меньше h.
+// Если все три вышеуказанных условия выполнены, вернуть положительное целое число, в противном случае вернуть -1.
+
+function bouncingBall(h, bounce, window) {
+  let ct = 1;
+  if(h > 0 && window < h && bounce > 0 && bounce < 1){
+  while(bounce*h > window){ //Шар может быть виден только в том случае, если высота отскакивающего шара больше, чем параметр окна.
+    ct+=2;
+    h*=bounce;  
+    console.log(h);
+  }
+    return ct;
+  } else {
+    return -1;
+  }
+}
+
+
+function bouncingBall(h,  bounce,  window) {
+  if(h <= 0 || bounce <= 0 || bounce >= 1 || window >= h){
+    return -1;
+  }
+
+  let newHeight = h * bounce;
+  return bouncingBall(newHeight, bounce, window) + 2;
+}
+
+
+  //console.log(bouncingBall(3.0, 0.66, 1.5)); //3
+  console.log(bouncingBall(5.0, 0.66, 1.5)); //15
+
+
+  // Ваши одноклассники попросили вас скопировать для них некоторые документы. Вы знаете, что есть "n" одноклассников, а в документах есть "m" страниц.
+
+  // Ваша задача - подсчитать, сколько пустых страниц вам нужно. Если n < 0или m < 0вернуть 0.
+
+
+  function paperwork(n, m) {
+    if (n > 0 && m > 0){
+      return n * m
+    } else {
+      return 0
+    }
+  }
+
+
+
+  // Учитывая массив (arr) в качестве аргумента, завершите функциюcountSmileys, которая должна вернуть общее количество улыбающихся лиц.
+
+  // Правила для улыбающегося лица:
+  
+  // Каждый смайлик должен содержать допустимую пару глаз. Глаза могут быть помечены как :или ;
+  // У смайлика может быть нос, но это необязательно. Допустимыми символами для носа являются -или ~
+  // У каждого улыбающегося лица должен быть улыбающийся рот, который должен быть отмечен либо )или D
+  // Никакие дополнительные символы не допускаются, кроме упомянутых.
+  
+  // Допустимые примеры смайликов: :) :D ;-D :~)
+  // Недопустимые смайлики: ;( :> :} :]
+
+  function countSmileys(smileys) {
+    let firstStep = smileyHasValidEye;
+    return smileys.filter(smiley => {
+      let state = firstStep;
+      for (let s of [...smiley]) {
+        state = state(s);
+        if (typeof state !== 'function') return state;
+      }
+    }).length;
+  }
+  
+  function smileyHasValidEye(s) {
+    if (s === ':' || s === ';') {
+      return smileyHasValidNose;
+    }
+    return smileyHasValidEye;
+  }
+  
+  function smileyHasValidNose(s) {
+    if (s === '-' || s === '~') {
+      return smileyHasValidMouth;
+    }
+    return smileyHasValidMouth(s);
+  }
+  
+  function smileyHasValidMouth(s) {
+    if (s === ')' || s === 'D') {
+      return true;
+    }
+    return false;
+  }
+
+
+
+  function countSmileys(arr) {
+    let smileys = 0;
+    let validSmileys = [":D", ";D", ":)", ";)", ":-D", ";-D", ":-)", ";-)", ":~D", ";~D", ":~)", ";~)"];
+    for (let i = 0; i < arr.length; i++) {
+      if (validSmileys.includes(arr[i])) {
+        smileys++;
+      }
+    }
+    return smileys;
+  }
+  
+  console.log(countSmileys([':~(', ':>', ':D', ':(', ':o>', ':)']));
+
+
+  // Основная идея состоит в том, чтобы подсчитать все встречающиеся символы в строке. Если у вас есть строка like aba, то результат должен быть {'a': 2, 'b': 1}таким .
+
+  // Что делать, если строка пуста? Тогда результатом должен быть пустой литерал объекта, {}.
+
+  function count (string) {  
+    // The function code should be here
+    let result = {};
+    let length = string.length;
+
+    for (let i = 0; i < length; i++) {
+      const char = string[i];
+      if ((!result[char])) result[char] = 0;
+      result[char]++;
+    }
+    return result;
+    //  return {};
+  }
+  console.log(count('abac'));
+
+
+
+// Ваша задача - отсортировать заданную строку. Каждое слово в строке будет содержать одно число. Это число - позиция, которую должно занимать слово в результате.
+
+// Примечание: числа могут быть от 1 до 9. Таким образом, 1 будет первым словом (а не 0).
+
+// Если входная строка пуста, верните пустую строку. Слова во входной строке будут содержать только действительные последовательные числа.
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+let str = "4of Fo1r people g3ood th5e the2";
+
+// function order(words){
+//   // ...
+//   if (words === ''){
+//     return ''
+//   }
+//   let newArr = words.split(' ');
+//   const mainArr = newArr.sort((a,b) => a.match(/[1-9]/gi) - b.match(/[1-9]/gi));
+//   const result = mainArr.join(' ');
+//   return result;
+
+// }
+
+
+function order(words){
+  let array = words.split(' ');
+  let newArrSorted = [];
+  for (let i = 0; i <= array.length; i++){
+    console.log(array[i])
+    for (let j = 0; j < array.length; j++){
+      if (array[j].indexOf(i) >= 0){
+        newArrSorted.push(array[j]);
+        console.log(newArrSorted);
+      }
+    }
+  }
+  return newArrSorted.join(' ');
+}
+
+
+console.log(order(str))
+
+
+
+
+// Число 89- это первое целое число, состоящее более чем из одной цифры, которое удовлетворяет свойству, частично представленному в названии этого ката. Какой смысл говорить "Эврика"? 
+// Потому что эта сумма дает одно и то же число.
+
+// В действительности: 89 = 8^1 + 9^2
+
+// Следующим номером в обладании этим свойством является 135.
+
+// Посмотрите на это свойство еще раз: 135 = 1^1 + 3^2 + 5^3
+
+// Нам нужна функция для сбора этих чисел, которая может принимать два целых aчисла, bкоторая определяет диапазон [a, b](включительно) и 
+// выводит список отсортированных чисел в диапазоне, который удовлетворяет описанному выше свойству.
+
+
+const EUREKAS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 89,135, 175, 518, 598, 1306, 1676, 2427, 2646798];
+
+// const sumDigPow = (a, b) => EUREKAS.filter( (n) => a <= n && n <= b );
+
+
+function sumDigPow(a, b) {
+  let arr = [];
+  for (let i = a; i <= b; i++) {
+    let sum = 0;
+    //console.log(i);
+    for (let j = 0; j <= String(i).length; j++) {
+      console.log(String(i)[j]);
+      sum += Math.pow(parseInt(String(i)[j]), j+1); 
+
+      if (sum == i) arr.push(i);
+    }
+  }
+  return arr;
+}
+console.log(sumDigPow(1,10))
+
+
+// В небольшом городе численность населения составляет p0 = 1000начало года. 
+// Население регулярно увеличивается 2 percentна год, и, кроме 50того, в город ежегодно приезжают новые жители. 
+// Сколько лет нужно городу, чтобы его население увеличилось или сравнялось с p = 1200жителями?
+
+function nbYear(p0, percent, aug, p1) {
+  let years = 0;
+  for (years = 0; p0 < p1; years++) {
+    p0 = Math.floor(p0 + p0 * percent / 100 + aug);
+  }
+  return years
+}
+// 1 1080
+// 2 1162,4
+// 3 1247,272
+// 4 1 334,69016
+// 5 
+console.log(nbYear(1000, 3, 50, 1400))
+
+
+// Кто помнит свое время на школьном дворе, когда девочки брали цветок и рвали его лепестки, произнося 
+// каждую из следующих фраз каждый раз, когда срывался лепесток:
+
+// "Я люблю тебя"
+// "немного"
+// "очень"
+// "страстно"
+// "безумно"
+// "вовсе нет"
+// Если лепестков больше 6, вы начинаете сначала с "I love you"7 лепестков, "a little"с 8 лепестков и так далее.
+
+// Когда был сорван последний лепесток, раздались крики волнения, мечтаний, нахлынувших мыслей и эмоций.
+
+// Ваша цель в этом ката - определить, какую фразу девушки произнесли бы на последнем лепестке для цветка с заданным количеством лепестков. 
+// Количество лепестков всегда больше 0.
+
+
+function howMuchILoveYou(nbPetals) {
+  let petalSaying = ["I love you", "A little", "A lot", "Passionately", "Madly", "Not at all"];
+  let index = (nbPetals - 1) % petalSaying.length;
+  // console.log(petalSaying.length)
+  // console.log(index);
+  return petalSaying[index];
+}
+
+const phrases = [
+  'I love you',
+  'a little',
+  'a lot',
+  'passionately',
+  'madly',
+  'not at all',
+]
+
+function howMuchILoveYou(n) {
+   return phrases[(n - 1) % phrases.length] 
+}
+
+
+console.log(howMuchILoveYou(6))
+
+// Записать номер в развернутом виде
+// Вам будет присвоен номер, и вам нужно будет вернуть его в виде строки в развернутом виде.
+function expandedForm(num){
+  const array = num.toString().split('');
+
+  for (let n = 0; n < array.length - 1; ++n){ 
+    if (array[n] > 0){
+      console.log(n);
+      for (let j = n; j < array.length - 1; ++j) { // array.length - 1 - это означает что последнюю итерацию считывать не надо
+        array[n] += '0';
+      }
+    }
+  }
+  return array.join().replace(new RegExp(",0", "g"), "").replace(new RegExp(",", "g"), " + ");
+}
+
+
+console.log(expandedForm(1234))
+
+
+
+// Существует массив с некоторыми числами. Все числа равны, за исключением одного. 
+// Попробуй найти его!
+
+function findUnique(arr) {
+  return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n) );
+}
+
+
+console.log(findUnique([ 1, 2, 2, 2, 2]))
+
+
+
+
+// Существует массив строк. Все строки содержат одинаковые буквы, кроме одной. 
+// Попробуй найти его!
+function findUniq(arr) {
+  // do magic
+  return arr.find(q => arr.q)
+}
+
+
+function findUniq(arr) {
+  return arr.sort().filter((e, i, a) => e.match(new RegExp(`[^${a[1]}]`, 'gi')))[0]
+}
+
+// Существует массив. Все элементы одинаковы, за исключением одного. 
+// Попробуй найти его!
+
+
+function findUniq(a) {
+  for (var b = 0; b < a.length; b++)
+    if (a[b] !== a[0]) return !1;
+  return !0
+};
+
+
+console.log(findUniq([ 'w', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a', 2 ]));
+
+
+
+function wave(str){
+  return Array.from(str, (c,i) => 
+  c === ' ' ? '' :
+  `${str.substring(0, i)}${c.toUpperCase()}${str.substring(i + 1)}`
+  ).filter(c => c);
+}
+
+
+function wave(str){
+  let newArr = [];
+  for (let i = 0; i < str.length; i++) {
+    let copy = str.split('');
+    if(copy[i] !== ' ') {
+    copy[i] = copy[i].toUpperCase()
+    newArr.push(copy.join(''))
+    }
+  }
+  return newArr
+}
+
+
+console.log(wave('hello'));
+
+
+// императивный стиль 
+function onlyOdd(array){
+  let result = []
+  for (let part of array){
+    if (part % 2 !== 0) {
+      result.push(part);
+    }
+  }
+  return result;
+}
+//декларативный
+function onlyOdd(array){
+  return array.filter((element) => element % 2 !== 0);
+}
+console.log(onlyOdd([1,2,3,4]))
+
+
+
+
+
+
