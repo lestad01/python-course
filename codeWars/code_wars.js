@@ -1128,5 +1128,277 @@ console.log(onlyOdd([1,2,3,4]))
 
 
 
+// Деструктуризация массива
+// у нас есть массив с именем и фамилией
+let arr = ["Ilya", "Kantor"];
+
+// деструктурирующее присваивание
+// записывает firstName = arr[0]
+// и surname = arr[1]
+let [firstName, surname] = arr;
+
+console.log(firstName); // Ilya
+console.log(surname);  // Kantor
 
 
+let [firstName, surname] = "Ilya Kantor".split(' ');
+console.log(firstName); // Ilya
+console.log(surname);  // Kantor
+
+
+// второй элемент не нужен
+let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+console.log( title ); // Consul
+
+
+//Цикл с .entries()
+let user = {
+  name: "John",
+  age: 30
+};
+
+// цикл по ключам и значениям
+for (let [key, value] of Object.entries(user)) {
+  console.log(`${key}:${value}`); // name:John, затем age:30
+}
+
+
+
+let user = new Map();
+user.set("name", "John");
+user.set("age", "30");
+
+// Map перебирает как пары [ключ, значение], что очень удобно для деструктурирования
+for (let [key, value] of user) {
+  alert(`${key}:${value}`); // name:John, затем age:30
+}
+
+
+// Трюк обмена переменных
+// Существует хорошо известный трюк для обмена значений двух переменных с использованием деструктурирующего присваивания:
+
+let guest = "Jane";
+let admin = "Pete";
+
+// Давайте поменяем местами значения: сделаем guest = "Pete", а admin = "Jane"
+[guest, admin] = [admin, guest];
+
+alert(`${guest} ${admin}`); // Pete Jane (успешно заменено!)
+
+
+
+// Деструктуризация объекта
+// Деструктурирующее присваивание также работает с объектами.
+
+// Синтаксис:
+
+let {var1, var2} = {var1:…, var2:…}
+
+
+let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+let {title, width, height} = options;
+
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200
+
+
+
+let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+// { sourceProperty: targetVariable }
+let {width: w, height: h, title} = options;
+
+// width -> w
+// height -> h
+// title -> title
+
+alert(title);  // Menu
+alert(w);      // 100
+alert(h);      // 200
+
+// Двоеточие показывает «что : куда идёт». В примере выше свойство width сохраняется в переменную w, 
+// свойство height сохраняется в h, а title присваивается одноимённой переменной.
+
+
+let options = {
+  size: {
+    width: 100,
+    height: 200
+  },
+  items: ["Cake", "Donut"],
+  extra: true
+};
+
+// деструктуризация разбита на несколько строк для ясности
+let {
+  size: { // положим size сюда
+    width,
+    height
+  },
+  items: [item1, item2], // добавим элементы к items
+  title = "Menu" // отсутствует в объекте (используется значение по умолчанию)
+} = options;
+
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200
+alert(item1);  // Cake
+alert(item2);  // Donut
+
+
+// Полный синтаксис для объекта:
+
+let {prop : varName = default, ...rest} = object
+
+let [item1 = default, item2, ...rest] = array
+
+
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+function topSalary(salaries) {
+
+  let max = 0;
+  let maxName = null;
+
+  for(const [name, salary] of Object.entries(salaries)) {
+    if (max < salary) {
+      max = salary;
+      maxName = name;
+    }
+  }
+
+  return maxName;
+}
+console.log(topSalary(salaries));
+
+
+// Место для первой задачи
+function calculateVolumeAndArea(cubeLength) {
+
+  if (typeof(cubeLength) !== 'number' || cubeLength < 0 || !Number.isInteger(cubeLength)){
+    return 'При вычислении произошла ошибка';
+  }
+
+  let surfaceAreaCube = 6 * Math.pow(cubeLength,2);
+  let volumeAreaCube = Math.pow(cubeLength, 3);
+
+  return `Объём куба: ${volumeAreaCube}, площадь всей поверхности: ${surfaceAreaCube}`;
+
+}
+console.log(calculateVolumeAndArea(5));
+
+
+// Место для второй задачи
+function getCoupeNumber(seatNum) {
+  if (typeof(seatNum) !== 'number' || seatNum < 0 || !Number.isInteger(seatNum)){
+    return 'При вычислении произошла ошибка';
+  }
+
+  if (seatNum === 0 || seatNum > 36) {
+    return 'Таких мест в вагоне не существует';
+  }
+
+
+  return Math.ceil(seatNum / 4);
+
+}
+console.log(getCoupeNumber(22));
+
+
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+  let result = 'Семья состоит из: ';
+    if (!arr){
+      return 'Семья пуста';
+    } else {
+      for (let name in family){
+        result += `${family[name]} `;
+      }
+    }
+  return result
+}
+console.log(showFamily(family));
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+  let result = '';
+  for (let item in arr){
+    result += `${arr[item].toLowerCase()}\n`;
+  }
+  return result;
+}
+
+console.log(standardizeStrings(favoriteCities));
+
+
+const someString = 'This is some strange string';
+
+
+
+function reverse(str) {
+  // Метод через reverse split
+  // let arr = str.split('').reverse().join('');
+  // if (typeof(str) !== 'string'){
+  //   return 'Ошибка'
+  // } else {
+  //   return arr;
+  // }
+
+  // Метод через цикл
+  let newStr = '';
+  for (let i = str.length - 1; i >= 0; i--){
+    newStr += str[i];
+  }
+  return newStr;
+}
+
+
+console.log(reverse(someString))
+
+
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'USD'];
+
+function availableCurr(arr, missingCurr) {
+  let result = '';
+  if (typeof(arr) === 0){
+    result = 'Нет доступных валют';
+  } else {
+    result = 'Доступные валюты: ';
+  }
+
+  arr.forEach(function(curr, i) {
+    if (curr !== missingCurr) {
+      result += `\n${curr}`;
+    }
+  });
+
+  for (let item = 0; item < arr.length; item++){
+    if (arr[item] !== missingCurr){
+      result += `\n${arr[item]}`;
+    }
+  }
+  return result;
+}
+
+console.log(availableCurr([...additionalCurrencies,...baseCurrencies], 'USD'))
