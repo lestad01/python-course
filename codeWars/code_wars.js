@@ -1186,5 +1186,91 @@ console.log(onlyOdd([1,2,3,4]))
 
 
 
+// 1) Создайте функцию, которая принимает в себя целое число минут и возвращает время в нужном формате строки. (Смотри пример). 
+// Обратите внимание на окончание слова "час" - оно меняется в зависимости от цифры. Если вместо аргумента приходит не число, дробное или отрицательное число - функция возвращает строку 
+// "Ошибка, проверьте данные"
+// Внимание! Давайте пока ограничимся максимум 600ю минутами (10 часов). Так как проверки на большие числа будут раздувать код (33 часа, 31 час, 11 часов и тд). 
+// Этого будет достаточно и код будет проверять именно этот промежуток (1 - 10 часов). Но вы можете реализовать и полный скрипт, он тоже должен проходить тесты.
+
+function getTimeFromMinutes(minutesTotal) {
+  if (typeof(minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
+    return "Ошибка, проверьте данные";
+  }
+
+  const hours = Math.floor(minutesTotal / 60);
+  const minutes = minutesTotal % 60;
+
+  let hoursStr = '';
+
+  switch (hours){
+    case 0:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+       hoursStr = 'часов';
+       break;
+    case 1:
+       hoursStr = 'час';
+    case 2:
+    case 3:
+    case 4:
+       hoursStr = 'часа';
+       break;
+    default:
+       hoursStr = 'часов';
+  }
+
+  return `Это ${hours} ${hoursStr} и ${minutes} минут`
+}
+
+console.log(getTimeFromMinutes(700));
+
+
+
+// 2) Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее из них. 
+//Если один из аргументов не является числом или их меньше 4 - возвращается 0. Дробные числа разрешены.
+// Пример:
+
+// findMaxNumber(1, 5, 6.6, 11); =>  11
+
+// findMaxNumber(1, 5, '6', '10');  =>  0
+
+// У этой задачи есть очень много вариантов решения, в том числе и встроенное в JS.Подходит любое :)
+
+function findMaxNumber(num1,num2,num3,num4) {
+  if (typeof(num1) !== 'number' || typeof(num2) !== 'number' || typeof(num3) !== 'number' || typeof(num4) !== 'number') {
+    return 0;
+  } else {
+    return Math.max(num1,num2,num3,num4);
+  }
+}
+console.log(findMaxNumber(1.5,0,1,0))
+
+
+function fib(num) {
+  if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+    return '';
+  }
+  let result = '';
+  let first = 0;
+  let second = 1;
+
+  for (let i = 0; i < num; i++){
+    if (i + 1 === num){
+      result += `${first}`;
+    } else {
+      result += `${first} `;
+    }
+
+    let third = first + second;
+    first = second;
+    second = third;
+  }
+  return result;
+}
+console.log(fib(5))
 
 

@@ -14,7 +14,7 @@ const options = {
 };
 //Деструктуризация объекта
 const {border,bg} = options.colors;
-console.log(bg);
+console.log(border);
 
 
 //console.log(Object.keys(options).length);
@@ -34,6 +34,61 @@ console.log(bg);
 //     }
 // }
 
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan){
+        const {age} = plan;
+        const {languages} = plan.skills;
+        let str = `Мне ${age} и я владею языками: `;
+        for (let key in languages) {
+            str += `${languages[key].toUpperCase()} `;
+        }
+        return str;
+    }
+};
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+function showProgrammingLangs(plan) {
+    let newStr = '';
+    const {programmingLangs} = plan.skills;
+    for (let key in programmingLangs){
+        newStr += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+    }
+    return newStr;
+}
+console.log(showProgrammingLangs(personalPlanPeter));
+
+function showExperience(plan) {
+    const {exp} = plan.skills;
+    return {exp};
+}
+
+console.log(showExperience(personalPlanPeter));
+
+function showAgeAndLangs(plan) {
+    const {age} = plan;
+    const {languages} = plan.skills;
+    let str = `Мне ${age} и я владею языками: `;
+
+    languages.forEach((lang) => {
+        str += `${lang.toUpperCase()} `;
+    });
+
+    return str;
+
+}
+
+personalPlanPeter
 
 
 
