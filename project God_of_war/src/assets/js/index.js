@@ -27,7 +27,7 @@ const values = [
   },
   {
     price: 29.99,
-    title: "Deluxe Edition",
+    title: "Digital Deluxe Edition",
   },
 ];
 
@@ -112,7 +112,7 @@ const handleCheckbox = ({ currentTarget: { checked, name } }) => {
 
   list.classList.add(active);
 };
-
+//swiper
 const initSlider = () => {
   new Swiper(".swiper", {
     loop: true,
@@ -125,25 +125,27 @@ const initSlider = () => {
     },
   });
 };
-
+// аккордеон FAQ
 const handleFaqItem = ({ currentTarget: target }) => {
   target.classList.toggle(classes.opened);
   const isOpened = target.classList.contains(classes.opened);
   const height = target.querySelector("p").clientHeight;
   const content = target.querySelector(".faq-item__content");
 
+  // если есть класс opened назначаем высоту height если нет то 0 px
   content.style.height = `${isOpened ? height : 0}px`;
 };
 
+// анимация , скролл секций при скроллинге
 const handleScroll = () => {
   const { scrollY: y, innerHeight: h } = window;
   sections.forEach((sec) => {
-    if (y > sec.offsetTop - h / 1.5) sec.classList.remove(classes.hidden);
+    if (y > sec.offsetTop - h / 2) sec.classList.remove(classes.hidden);
   });
 };
 
 const setTexts = () => {
-  const lang = localStorage.getItem("lang") || "en";
+  const lang = localStorage.getItem("lang") || "ger";
   const content = languages[lang];
 
   Object.entries(content).forEach(([key, value]) => {
@@ -160,6 +162,7 @@ const toggleLanguage = ({ target }) => {
   localStorage.setItem("lang", lang);
   setTexts();
 };
+
 
 const handleBuyButton = ({ currentTarget: target }) => {
   const { value } = target.dataset;
