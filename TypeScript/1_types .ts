@@ -20,5 +20,38 @@ const contact: [string,number] = ['Vladiken', 1234124];
 let variable: any = 42;
 variable = 'New String';
 
+// ===
+function sayMyName (name: string): void {
+    console.log(name);
+}
+sayMyName('Хайзенберг')
+
+// never когда функция возвращает 0нам ошибку и никогда не заканчивается
+// либо когда она постоянно что то выполняет
+
+function throwError(message: string): never {
+    throw new Error(message);
+}
+
+function infinite(): never {
+    while (true) {
+
+    }
+}
+
+// Type конструкция для создания собственных типов
+type login = string;
+//const Login: login = 'admin';
+
+type ID = string | number;
+const id1: ID = 1234;
+const id2: ID = '1234';
+// const id3: ID = true;
+
+// null
+type SomeType = string | null | undefined;
+
+
+
 
 
