@@ -36,7 +36,7 @@ print(id(my_cars) == id(copy_cars))
 
 
 my_nums = [1, 1, 6, 3, 21]
-print(my_nums.count(1))
+print(my_nums.count(21))
 
 
 my_nums.insert(2, -9)
