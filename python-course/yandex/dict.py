@@ -24,3 +24,31 @@ print(my_motorbike)
 
 del my_motorbike['is_new_key']
 print(my_motorbike)
+
+key_name = 'brand'
+my_motorbike[key_name] = 'BMW'
+print(my_motorbike)
+
+
+new_other_motorbike = {
+    'engine_vol': 1.6,
+    'price': 15000,
+    'brand': 'Audi',
+    'price_info': {
+        'price': 22000,
+        'is_available': True,
+    }
+}
+
+print(new_other_motorbike['price_info']['is_available'])
+
+print('Длина списка: ', len(new_other_motorbike))
+
+del new_other_motorbike['engine_vol']
+print('Длина списка: ', len(new_other_motorbike))
+
+# Метод словарей get
+# данный метод нужен для получения значений ключей
+
+print(new_other_motorbike.get('price'))
+print(new_other_motorbike.get('model', 0))
