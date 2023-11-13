@@ -57,3 +57,7 @@ new_pos_id.append(228)
 print(new_pos_id)
 new_pos_id_tuple = tuple(new_pos_id)
 print(new_pos_id_tuple)
+
+
+my_tuple = tuple({'first': 1, 'second': True})
+print(my_tuple)
