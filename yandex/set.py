@@ -37,3 +37,32 @@ print(len(my_set))
 
 # пустой набор
 my_new_set = set()
+print(my_new_set)
+
+
+# методы наборов
+# методы наборов наследуются от класса SET
+
+photo_sizes = {'1920x1080', '800x600'}
+
+# добавление значения в набор
+photo_sizes.add('1024x768')
+print(photo_sizes)
+
+# union или | метод объединения значений наборов
+other_sizes = {'1024x768', '1920x1080'}
+# all_sizes = photo_sizes.union(other_sizes)
+all_sizes = photo_sizes.union(other_sizes)
+print(all_sizes)
+
+# intersection или & находит элементы набора
+# которые находятся в двух элементах
+common_s = other_sizes.intersection(photo_sizes)
+print(common_s)
+
+# issubset показывает включен ли один набор
+# в другой набор
+nums = {1, 10, 9, 21}
+other_nums = {2, 13, 1, 10, 0, 9, 21}
+res = nums.issubset(other_nums)
+print(res)
