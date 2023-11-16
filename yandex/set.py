@@ -66,3 +66,23 @@ nums = {1, 10, 9, 21}
 other_nums = {2, 13, 1, 10, 0, 9, 21}
 res = nums.issubset(other_nums)
 print(res)
+
+
+my_set = {'abc', 'd', 'f', 'y'}
+other_set = {'a', 'f', 'd'}
+# print(my_set.intersection(other_set))
+print(my_set.intersection('abcd'))
+
+print(my_set.union(other_set))
+# множество other_set яне является подмножеством my_sets
+print(other_set.issubset(my_set))
+
+# difference показывает разницу между наборами
+print(my_set.difference(other_set))
+# удаляет элемент из набора
+print(my_set.discard('d'))
+print(my_set)
+
+copied_set = my_set.copy()
+print(copied_set)
+print(my_set & copied_set)
