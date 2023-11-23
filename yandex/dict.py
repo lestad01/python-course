@@ -52,3 +52,8 @@ print('Длина списка: ', len(new_other_motorbike))
 
 print(new_other_motorbike.get('price'))
 print(new_other_motorbike.get('model', 0))
+
+my_dict = {}
+# описание функции dict с  помощью которых можно создавать новые экземлпяры
+#
+print(my_dict.__doc__)
