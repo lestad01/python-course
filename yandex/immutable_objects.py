@@ -1,4 +1,5 @@
 # неизменяемые объекты
+from copy import deepcopy
 first_num = 10
 second_num = first_num
 
@@ -34,31 +35,78 @@ print(id(other_list))
 
 # example 2
 
-info = {
-    'name': 'Bogdan',
-    'is_instructor': True
-}
+# info = {
+#    'name': 'Bogdan',
+#    'is_instructor': True
+#
+# }
 
-info_copy = info
-info['reviews_qty'] = 5
-info_copy['reviews_qty'] = 100
+# info_copy = info
+# info['reviews_qty'] = 5
+# info_copy['reviews_qty'] = 100
 
-print(info['reviews_qty'])
-print(info_copy['reviews_qty'])
+# print(info['reviews_qty'])
+# print(info_copy['reviews_qty'])
 
 # --------------
-my_info = {
-    'name': 'Bogdan',
-    'is_instructor': True
-}
-other_info = {
-    'name': 'Bogdan',
-    'is_instructor': True
-}
-other_info['rating'] = 5.0
-print(my_info)
-print(other_info)
+# my_info = {
+#    'name': 'Bogdan',
+#    'is_instructor': True
+# }
+# other_info = {
+#    'name': 'Bogdan',
+#    'is_instructor': True
+# }
+# other_info['rating'] = 5.0
+# print(my_info)
+# print(other_info)
 
 # после копирования изменяемых
 # объектов изменения
 # отражаются на всех копиях
+
+
+# как избежать изменений копий
+# info = {
+#    'name': 'Bogdan',
+#    'is_instructor': True
+# }
+
+# info_copy = info.copy()
+# info_copy['reviews_qty'] = 5
+# print(info_copy)
+
+# print(info)
+
+# если у словаря есть вложенные словари,
+# то ссылки на них сохраняются
+# info = {
+#    'name': 'Bogdan',
+#    'is_instructor': True,
+#    'reviews': []
+# }
+
+# info_copy = info.copy()
+
+# info_copy['reviews'].append('Great course!')
+# print(info)
+# print(info_copy)
+
+# при использовании функции deepcopy
+# если у словаря есть вложенные словари
+# то ссылки на них не сохраняются
+info = {
+    'name': 'Bogdan',
+    'is_instructor': True,
+    'reviews': []
+}
+
+info_deepcopy = deepcopy(info)
+
+info_deepcopy['reviews'].append('Great course!')
+info['new_key'] = 10
+
+
+print(info)
+
+print(info_deepcopy)
