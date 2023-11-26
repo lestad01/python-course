@@ -105,3 +105,50 @@ def merge_lists_to_dict(first_list, second_list):
 
 
 print(merge_lists_to_dict([1, 2, 0, 11], [True, 'Charlie', '86', 'Alex']))
+
+
+# def sum_nums(*args):
+# print(args)
+# print(type(args))
+# print(args[0])
+# return sum(*args)
+
+
+# print(sum_nums(0))
+
+
+# def get_posts_info(name, posts_qnty):
+#    info = f"{name} wrote {posts_qnty} posts"
+#    return info
+
+
+# позиционные аргументы. порядок аргументов важен
+# info = get_posts_info('Alex', 23)
+# print(info)
+
+# -----------------------------------------
+
+# def get_posts_info(name, posts_qnty):
+#    info = f"{name} wrote {posts_qnty} posts"
+#    return info
+
+
+# аргументы с ключевыми словами. Порядок аргументов не важен
+# info = get_posts_info(name='Alex', posts_qnty=23)
+# print(info)
+
+
+# объединение аргументов в DICT словарь
+def gets_post_info(**person):
+    print(person)
+    print(type(person))
+    info = {
+        # если не ставить запятую Python объединяет две строки
+        f"{person['name']} wrote "
+        f"{person['posts_qnty']} posts"
+    }
+    return info
+
+
+info = gets_post_info(name='Alex', posts_qnty=11)
+print(info)
