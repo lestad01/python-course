@@ -150,5 +150,5 @@ def gets_post_info(**person):
     return info
 
 
-info = gets_post_info(name='Alex', posts_qnty=11)
+info = gets_post_info(name='Alex', posts_qnty=11, id=1352)
 print(info)
