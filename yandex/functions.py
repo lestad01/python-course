@@ -152,3 +152,12 @@ def gets_post_info(**person):
 
 info = gets_post_info(name='Alex', posts_qnty=11, id=1352)
 print(info)
+
+
+# значения параметров функции по умолчанию
+def mult_by_factor(value, multiplier=1):
+    return value * multiplier
+
+
+print(mult_by_factor(10, 2))
+print(mult_by_factor(5))
