@@ -10,3 +10,11 @@ print(bool.__doc__)
 my_list = []
 print(help(list.__eq__))
 print(help(my_list.__eq__))
+
+a = [1, 2]
+b = [1, 2]
+
+print(a is b)
+print(a == b)
+print(a.__eq__(b))
+print(a.__eq__)
