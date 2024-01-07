@@ -12,7 +12,7 @@ import random
 
 # continue
 
-# random_num = random.randint(1, 8)
+random_num = random.randint(1, 8)
 # while True:
 #     num = int(input("Guess the number 1 to 8: "))
 #     if num != random_num:
